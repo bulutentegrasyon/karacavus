@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin;
 use App\Models\Post;
+use App\Models\Reference;
 use App\Models\Service;
 use App\Models\BlogCategory;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,15 @@ Route::get('/', function () {
 });
 Route::get('/hakkimizda', fn() => view('frontend.about'));
 Route::get('/hizmetler', fn() => view('frontend.services'));
+Route::get('/referanslar', function () {
+    $references = Reference::active()->orderBy('order')->get();
+    return view('frontend.references', compact('references'));
+});
+Route::get('/referanslar/{slug}', function ($slug) {
+    $reference = Reference::active()->where('slug', $slug)->firstOrFail();
+    $others    = Reference::active()->where('id', '!=', $reference->id)->inRandomOrder()->take(8)->get();
+    return view('frontend.reference-detail', compact('reference', 'others'));
+});
 Route::get('/projeler', fn() => view('frontend.projects'));
 Route::get('/iletisim', fn() => view('frontend.contact'));
 Route::get('/blog', function () {
@@ -337,6 +347,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 
     // Projeler
     Route::resource('projects', Admin\ProjectController::class)->except('show');
+
+    // Referanslar
+    Route::resource('references', Admin\ReferenceController::class)->except('show');
 
     // Ayarlar
     Route::get('settings', [Admin\SettingController::class, 'index'])->name('settings.index');

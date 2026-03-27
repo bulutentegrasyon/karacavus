@@ -343,6 +343,16 @@ return [
                 ['text' => 'Yeni Proje',   'url' => 'admin/projects/create', 'icon' => 'fas fa-fw fa-plus'],
             ],
         ],
+        [
+            'text'   => 'Referanslar',
+            'url'    => 'admin/references',
+            'icon'   => 'fas fa-fw fa-hard-hat',
+            'active' => ['admin/references*'],
+            'submenu' => [
+                ['text' => 'Tüm Referanslar', 'url' => 'admin/references',        'icon' => 'fas fa-fw fa-list'],
+                ['text' => 'Yeni Referans',   'url' => 'admin/references/create', 'icon' => 'fas fa-fw fa-plus'],
+            ],
+        ],
         ['header' => 'AYARLAR'],
         [
             'text'   => 'Site Ayarları',
