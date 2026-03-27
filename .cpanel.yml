@@ -1,6 +1,9 @@
 ---
 deployment:
   tasks:
+    - export COMPOSER_HOME=/home/hafriyatv1swantr/.composer && /usr/local/bin/php /usr/local/bin/composer install --no-dev --optimize-autoloader --no-interaction --working-dir=/home/hafriyatv1swantr/hafriyatv1.swantro.co 2>&1 || true
+    - /usr/local/bin/php artisan migrate --force 2>&1 || true
+    - /usr/local/bin/php artisan storage:link 2>&1 || true
     - /usr/local/bin/php artisan config:clear
     - /usr/local/bin/php artisan view:clear
     - /usr/local/bin/php artisan cache:clear
