@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/hafriyatv1swantr/hafriyatv1.swantro.co/
+    - /bin/cp -R . $DEPLOYPATH
