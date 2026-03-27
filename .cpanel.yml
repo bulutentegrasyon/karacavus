@@ -1,16 +1,9 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/hafriyatv1swantr/hafriyatv1.swantro.co/
-    - /bin/cp -Rf public/. $DEPLOYPATH/public/
-    - /bin/cp -Rf app/. $DEPLOYPATH/app/
-    - /bin/cp -Rf bootstrap/. $DEPLOYPATH/bootstrap/
-    - /bin/cp -Rf config/. $DEPLOYPATH/config/
-    - /bin/cp -Rf database/. $DEPLOYPATH/database/
-    - /bin/cp -Rf lang/. $DEPLOYPATH/lang/
-    - /bin/cp -Rf resources/. $DEPLOYPATH/resources/
-    - /bin/cp -Rf routes/. $DEPLOYPATH/routes/
-    - /bin/cp -Rf storage/. $DEPLOYPATH/storage/
-    - /bin/cp -f artisan $DEPLOYPATH/artisan
-    - /bin/cp -f composer.json $DEPLOYPATH/composer.json
-    - /bin/cp -f composer.lock $DEPLOYPATH/composer.lock
+    - /usr/local/bin/php artisan config:clear
+    - /usr/local/bin/php artisan view:clear
+    - /usr/local/bin/php artisan cache:clear
+    - /usr/local/bin/php artisan config:cache
+    - /usr/local/bin/php artisan route:cache
+    - /usr/local/bin/php artisan view:cache
