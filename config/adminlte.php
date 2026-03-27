@@ -63,12 +63,12 @@ return [
     |
     */
 
-    'logo' => '<b>Karacavus</b>',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
-    'logo_img_xl' => null,
+    'logo' => '<img src="/assets/img/logo-admin.webp" alt="Karaçavuş" style="height:32px;width:auto;max-width:160px;">',
+    'logo_img' => 'assets/img/logo-admin.webp',
+    'logo_img_class' => 'brand-image elevation-0',
+    'logo_img_xl' => 'assets/img/logo-admin.webp',
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin Logo',
+    'logo_img_alt' => 'Karaçavuş Şirketler Grubu',
 
     /*
     |--------------------------------------------------------------------------
@@ -84,13 +84,13 @@ return [
     */
 
     'auth_logo' => [
-        'enabled' => false,
+        'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'Auth Logo',
+            'path' => 'assets/img/logo-admin.webp',
+            'alt' => 'Karaçavuş Şirketler Grubu',
             'class' => '',
-            'width' => 50,
-            'height' => 50,
+            'width' => 160,
+            'height' => 'auto',
         ],
     ],
 

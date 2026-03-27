@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Str;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -37,5 +38,16 @@ class Service extends Model
     public function getMetaTitleAttribute($value): string
     {
         return $value ?: $this->title;
+    }
+
+    public function getImageUrlAttribute(): string
+    {
+        if (!$this->cover_image) {
+            return asset('assets/img/service/service-1.webp');
+        }
+        if (Str::startsWith($this->cover_image, 'assets/')) {
+            return asset($this->cover_image);
+        }
+        return asset('storage/' . $this->cover_image);
     }
 }
