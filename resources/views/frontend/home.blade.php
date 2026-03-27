@@ -395,48 +395,29 @@
                     </div>
                     <!-- testimonial slider -->
                     <div class="testimonial-slider-wrapper space__inner__bottom__md--30  space__inner__bottom__lm--30">
+                        @forelse($testimonials as $t)
                         <div class="single-testimonial text-center">
-                            <p class="single-testimonial__text space__bottom--40"> <span class="quote-left">"</span>
-                                Karaçavuş Şirketler Grubu ile çalışmak büyük bir memnuniyet. Projemizi zamanında ve bütçe dahilinde teslim ettiler. <span
-                                class="quote-right">"</span></p>
+                            <p class="single-testimonial__text space__bottom--40">
+                                <span class="quote-left">"</span>{{ $t->content }}<span class="quote-right">"</span>
+                            </p>
                             <div class="single-testimonial__rating space__bottom--10">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
+                                @for($i = 1; $i <= 5; $i++)
+                                <i class="fa fa-star{{ $i <= $t->rating ? '' : '-o' }}"></i>
+                                @endfor
                             </div>
-                            <h5 class="single-testimonial__author">A** V***</h5>
-                            <p class="single-testimonial__author-des">A** Yapı A.Ş.</p>
+                            <h5 class="single-testimonial__author">{{ $t->author_name }}</h5>
+                            <p class="single-testimonial__author-des">{{ $t->author_company }}</p>
                         </div>
+                        @empty
                         <div class="single-testimonial text-center">
-                            <p class="single-testimonial__text space__bottom--40"> <span class="quote-left">"</span>
-                                Profesyonel ekipleri ve modern ekipmanlarıyla hafriyat sürecini sorunsuz yönettiler. <span
-                                class="quote-right">"</span></p>
+                            <p class="single-testimonial__text space__bottom--40">
+                                <span class="quote-left">"</span>Karaçavuş Şirketler Grubu ile çalışmak büyük bir memnuniyet.<span class="quote-right">"</span>
+                            </p>
                             <div class="single-testimonial__rating space__bottom--10">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                             </div>
-                            <h5 class="single-testimonial__author">K** A***</h5>
-                            <p class="single-testimonial__author-des">K** Yapı Taahhüt A.Ş.</p>
                         </div>
-                        <div class="single-testimonial text-center">
-                            <p class="single-testimonial__text space__bottom--40"> <span class="quote-left">"</span>
-                                Güvenilir, hızlı ve kaliteli hizmet. Bir dahaki projemizde de tercihimiz Karaçavuş olacak. <span
-                                class="quote-right">"</span></p>
-                            <div class="single-testimonial__rating space__bottom--10">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <h5 class="single-testimonial__author">S** Y***</h5>
-                            <p class="single-testimonial__author-des">D** İnşaat Ltd</p>
-                        </div>
+                        @endforelse
                     </div>
                 </div>
             </div>

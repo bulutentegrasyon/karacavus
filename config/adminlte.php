@@ -353,6 +353,22 @@ return [
                 ['text' => 'Yeni Referans',   'url' => 'admin/references/create', 'icon' => 'fas fa-fw fa-plus'],
             ],
         ],
+        [
+            'text'   => 'Müşteri Yorumları',
+            'url'    => 'admin/testimonials',
+            'icon'   => 'fas fa-fw fa-comments',
+            'active' => ['admin/testimonials*'],
+            'submenu' => [
+                ['text' => 'Tüm Yorumlar',  'url' => 'admin/testimonials',        'icon' => 'fas fa-fw fa-list'],
+                ['text' => 'Yeni Yorum',    'url' => 'admin/testimonials/create', 'icon' => 'fas fa-fw fa-plus'],
+            ],
+        ],
+        [
+            'text'   => 'Şirketler',
+            'url'    => 'admin/companies',
+            'icon'   => 'fas fa-fw fa-building',
+            'active' => ['admin/companies*'],
+        ],
         ['header' => 'AYARLAR'],
         [
             'text'   => 'Site Ayarları',
