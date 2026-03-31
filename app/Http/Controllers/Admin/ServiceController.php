@@ -26,8 +26,12 @@ class ServiceController extends Controller
             'title'            => 'required|string|max:255',
             'icon'             => 'nullable|string|max:100',
             'cover_image'      => 'nullable|image|max:2048',
+            'sector'           => 'nullable|string|max:255',
+            'company'          => 'nullable|string|max:255',
             'excerpt'          => 'nullable|string|max:500',
             'content'          => 'required|string',
+            'features'         => 'nullable|array',
+            'features.*'       => 'string|max:255',
             'order'            => 'nullable|integer|min:0',
             'is_active'        => 'boolean',
             'meta_title'       => 'nullable|string|max:255',
@@ -36,6 +40,7 @@ class ServiceController extends Controller
         ]);
 
         $data['is_active'] = $request->boolean('is_active');
+        $data['features']  = array_values(array_filter($request->input('features', [])));
 
         if ($request->hasFile('cover_image')) {
             $data['cover_image'] = $request->file('cover_image')->store('services', 'public');
@@ -57,8 +62,12 @@ class ServiceController extends Controller
             'title'            => 'required|string|max:255',
             'icon'             => 'nullable|string|max:100',
             'cover_image'      => 'nullable|image|max:2048',
+            'sector'           => 'nullable|string|max:255',
+            'company'          => 'nullable|string|max:255',
             'excerpt'          => 'nullable|string|max:500',
             'content'          => 'required|string',
+            'features'         => 'nullable|array',
+            'features.*'       => 'string|max:255',
             'order'            => 'nullable|integer|min:0',
             'is_active'        => 'boolean',
             'meta_title'       => 'nullable|string|max:255',
@@ -67,9 +76,10 @@ class ServiceController extends Controller
         ]);
 
         $data['is_active'] = $request->boolean('is_active');
+        $data['features']  = array_values(array_filter($request->input('features', [])));
 
         if ($request->hasFile('cover_image')) {
-            if ($service->cover_image) {
+            if ($service->cover_image && !str_starts_with($service->cover_image, 'assets/')) {
                 Storage::disk('public')->delete($service->cover_image);
             }
             $data['cover_image'] = $request->file('cover_image')->store('services', 'public');
@@ -82,7 +92,7 @@ class ServiceController extends Controller
 
     public function destroy(Service $service)
     {
-        if ($service->cover_image) {
+        if ($service->cover_image && !str_starts_with($service->cover_image, 'assets/')) {
             Storage::disk('public')->delete($service->cover_image);
         }
         $service->delete();

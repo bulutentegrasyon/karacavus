@@ -448,30 +448,18 @@
             <h4 style="font-size:13px; text-transform:uppercase; letter-spacing:3px; color:#999; margin-bottom:8px; font-family:'Rajdhani',sans-serif; text-align:center;">Karaçavuş Şirketler Grubu</h4>
             <h3 style="font-size:28px; font-weight:700; color:#1a1a1a; text-align:center; margin-bottom:48px; font-family:'Rajdhani',sans-serif;">Diğer Şirketlerimiz</h3>
 
-            @php
-            $all = [
-                ['slug' => 'karacavus-proje-gelistirme', 'short' => 'Karaçavuş Proje Geliştirme', 'sector' => 'Hafriyat · İnşaat · Proje', 'icon' => 'flaticon-020-planning'],
-                ['slug' => 'asel-insaat-hafriyat',       'short' => 'Asel İnşaat Hafriyat',       'sector' => 'Altyapı · Üstyapı · Otomotiv', 'icon' => 'flaticon-008-machine-1'],
-                ['slug' => 'omkar-insaat-hafriyat',      'short' => 'Ömkar Otomotiv',              'sector' => 'Otomotiv · Ticari Araç', 'icon' => 'flaticon-006-truck'],
-                ['slug' => 'nayifogullari-insaat',       'short' => 'Nayifoğulları İnşaat',       'sector' => 'İnşaat · Sanayi · Ticaret', 'icon' => 'flaticon-037-forklift'],
-                ['slug' => 'nayifogullari-ymk-yikim',   'short' => 'Nayifoğulları YMK Yıkım',   'sector' => 'Yıkım · Kentsel Dönüşüm', 'icon' => 'flaticon-016-gear'],
-            ];
-            @endphp
-
             <div class="row">
-                @foreach($all as $other)
-                    @if($other['slug'] !== $company['slug'])
-                    <div class="col-lg-3 col-md-6 space__bottom--30">
-                        <a href="{{ route('company.show', $other['slug']) }}" style="display:block; text-decoration:none; background:#fff; border:1px solid #e5e5e5; padding:30px 24px; border-radius:2px; transition:box-shadow .25s;" class="other-company-card">
-                            <div style="width:48px; height:48px; background:#1a1a1a; border-radius:2px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-                                <i class="{{ $other['icon'] }}" style="font-size:22px; color:#c8a951;"></i>
-                            </div>
-                            <span style="display:block; font-size:10px; text-transform:uppercase; letter-spacing:2px; color:#c8a951; margin-bottom:8px; font-family:'Rajdhani',sans-serif;">{{ $other['sector'] }}</span>
-                            <h5 style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 12px; line-height:1.4; font-family:'Rajdhani',sans-serif; text-transform:uppercase;">{{ $other['short'] }}</h5>
-                            <span style="font-size:11px; text-transform:uppercase; letter-spacing:2px; color:#c8a951; font-family:'Rajdhani',sans-serif;">İncele →</span>
-                        </a>
-                    </div>
-                    @endif
+                @foreach($others as $other)
+                <div class="col-lg-3 col-md-6 space__bottom--30">
+                    <a href="{{ route('company.show', $other->slug) }}" style="display:block; text-decoration:none; background:#fff; border:1px solid #e5e5e5; padding:30px 24px; border-radius:2px; transition:box-shadow .25s;" class="other-company-card">
+                        <div style="width:48px; height:48px; background:#1a1a1a; border-radius:2px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+                            <i class="{{ $other->icon }}" style="font-size:22px; color:#c8a951;"></i>
+                        </div>
+                        <span style="display:block; font-size:10px; text-transform:uppercase; letter-spacing:2px; color:#c8a951; margin-bottom:8px; font-family:'Rajdhani',sans-serif;">{{ $other->sector }}</span>
+                        <h5 style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 12px; line-height:1.4; font-family:'Rajdhani',sans-serif; text-transform:uppercase;">{{ $other->short }}</h5>
+                        <span style="font-size:11px; text-transform:uppercase; letter-spacing:2px; color:#c8a951; font-family:'Rajdhani',sans-serif;">İncele →</span>
+                    </a>
+                </div>
                 @endforeach
             </div>
         </div>

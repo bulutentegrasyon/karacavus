@@ -14,6 +14,7 @@ class Service extends Model
 
     protected $fillable = [
         'title', 'slug', 'icon', 'cover_image', 'excerpt', 'content',
+        'sector', 'company', 'features',
         'order', 'is_active',
         'meta_title', 'meta_description', 'meta_keywords',
     ];
@@ -21,6 +22,7 @@ class Service extends Model
     protected $casts = [
         'is_active' => 'boolean',
         'order'     => 'integer',
+        'features'  => 'array',
     ];
 
     public function getSlugOptions(): SlugOptions

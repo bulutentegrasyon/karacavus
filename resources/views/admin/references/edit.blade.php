@@ -81,49 +81,41 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title"><i class="fas fa-photo-video mr-1"></i> Mevcut Galeri</h3>
-                    <div class="card-tools"><small class="text-muted">Çıkarmak istediklerinizin işaretini kaldırın</small></div>
+                    <div class="card-tools"><small class="text-muted">Silmek için <i class="fas fa-times"></i> butonuna tıklayın</small></div>
                 </div>
                 <div class="card-body">
 
                     {{-- YouTube videoları --}}
                     @foreach($ytItems as $yt)
                     @php preg_match('/embed\/([a-zA-Z0-9_-]+)/', $yt, $m); $vid = $m[1] ?? ''; @endphp
-                    <div class="d-flex align-items-center mb-2 p-2 border rounded">
-                        <div class="custom-control custom-checkbox mr-3">
-                            <input type="checkbox" class="custom-control-input" id="keep_{{ md5($yt) }}"
-                                   name="gallery_keep[]" value="{{ $yt }}" checked>
-                            <label class="custom-control-label" for="keep_{{ md5($yt) }}"></label>
-                        </div>
-                        <img src="https://img.youtube.com/vi/{{ $vid }}/default.jpg" style="width:80px;height:60px;object-fit:cover;border-radius:2px;" class="mr-2">
-                        <div>
+                    <div class="d-flex align-items-center mb-2 p-2 border rounded gallery-keep-item">
+                        <input type="hidden" name="gallery_keep[]" value="{{ $yt }}">
+                        <img src="https://img.youtube.com/vi/{{ $vid }}/default.jpg" style="width:80px;height:60px;object-fit:cover;border-radius:2px;" class="mr-3">
+                        <div class="flex-grow-1">
                             <span class="badge badge-danger mr-1"><i class="fab fa-youtube"></i> Video</span>
                             <small class="text-muted d-block" style="word-break:break-all;">{{ $yt }}</small>
                         </div>
+                        <button type="button" class="btn btn-sm btn-outline-danger ml-2 gallery-remove-btn" title="Sil">
+                            <i class="fas fa-times"></i>
+                        </button>
                     </div>
                     @endforeach
 
                     {{-- Görseller --}}
                     <div class="row mt-2">
                     @foreach($imgItems as $img)
-                    <div class="col-4 col-md-3 mb-3">
+                    <div class="col-6 col-md-4 col-lg-3 mb-3 gallery-keep-item">
+                        <input type="hidden" name="gallery_keep[]" value="{{ $img }}">
                         <div class="position-relative">
                             <img src="{{ str_starts_with($img,'assets/') ? asset($img) : asset('storage/'.$img) }}"
                                  class="img-fluid rounded" style="aspect-ratio:4/3;object-fit:cover;width:100%;">
-                            <div class="position-absolute" style="top:4px;left:4px;">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="keep_{{ md5($img) }}"
-                                           name="gallery_keep[]" value="{{ $img }}" checked>
-                                    <label class="custom-control-label" for="keep_{{ md5($img) }}"
-                                           style="background:rgba(0,0,0,.5);padding:2px 6px;border-radius:2px;cursor:pointer;"></label>
-                                </div>
-                            </div>
+                            <button type="button"
+                                    class="btn btn-danger btn-sm gallery-remove-btn position-absolute"
+                                    style="top:6px;right:6px;width:28px;height:28px;padding:0;line-height:1;border-radius:50%;"
+                                    title="Sil">
+                                <i class="fas fa-times" style="font-size:11px;"></i>
+                            </button>
                         </div>
-                        <small class="text-muted" style="font-size:10px;">
-                            <input type="checkbox" name="gallery_keep[]" value="{{ $img }}" checked style="display:none;" id="keep2_{{ md5($img) }}">
-                            <label for="keep_{{ md5($img) }}" class="mb-0" style="cursor:pointer;">
-                                <span class="badge badge-{{ '' }}">✓ Koru</span>
-                            </label>
-                        </small>
                     </div>
                     @endforeach
                     </div>
@@ -242,11 +234,43 @@ document.getElementById('gallery').addEventListener('change', function(e) {
     Array.from(e.target.files).forEach(file => {
         const reader = new FileReader();
         reader.onload = ev => {
-            preview.innerHTML += `<div class="col-4 mb-2"><img src="${ev.target.result}" class="img-fluid rounded" style="aspect-ratio:4/3;object-fit:cover;"></div>`;
+            preview.innerHTML += `<div class="col-6 col-md-4 col-lg-3 mb-2"><img src="${ev.target.result}" class="img-fluid rounded" style="aspect-ratio:4/3;object-fit:cover;width:100%;"></div>`;
         };
         reader.readAsDataURL(file);
     });
     document.querySelector('label[for="gallery"]').textContent = e.target.files.length + ' görsel seçildi';
+});
+
+// Galeri silme
+document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.gallery-remove-btn');
+    if (!btn) return;
+    const item = btn.closest('.gallery-keep-item');
+    if (!item) return;
+    // hidden input'u devre dışı bırak (form'a gönderilmesin)
+    const inp = item.querySelector('input[name="gallery_keep[]"]');
+    if (inp) inp.disabled = true;
+    // görsel soluklaştır + çarpıyı yeşil tick'e çevir
+    item.style.opacity = '0.35';
+    btn.innerHTML = '<i class="fas fa-undo" style="font-size:11px;"></i>';
+    btn.title = 'Geri Al';
+    btn.classList.replace('btn-danger', 'btn-secondary');
+    btn.dataset.removed = '1';
+});
+
+// Geri al
+document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.gallery-remove-btn');
+    if (!btn || btn.dataset.removed !== '1') return;
+    const item = btn.closest('.gallery-keep-item');
+    if (!item) return;
+    const inp = item.querySelector('input[name="gallery_keep[]"]');
+    if (inp) inp.disabled = false;
+    item.style.opacity = '1';
+    btn.innerHTML = '<i class="fas fa-times" style="font-size:11px;"></i>';
+    btn.title = 'Sil';
+    btn.classList.replace('btn-secondary', 'btn-danger');
+    delete btn.dataset.removed;
 });
 </script>
 @stop

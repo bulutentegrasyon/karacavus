@@ -30,13 +30,55 @@
                             <label>İkon Sınıfı</label>
                             <input type="text" name="icon" class="form-control" value="{{ old('icon', $service->icon) }}">
                         </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Sektör <small class="text-muted">(örn: Hafriyat · Kazı · Zemin)</small></label>
+                                    <input type="text" name="sector" class="form-control"
+                                           value="{{ old('sector', $service->sector) }}"
+                                           placeholder="Hafriyat · Kazı · Zemin">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>İlgili Şirket</label>
+                                    <input type="text" name="company" class="form-control"
+                                           value="{{ old('company', $service->company) }}"
+                                           placeholder="Karaçavuş Proje Geliştirme">
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group">
-                            <label>Özet</label>
+                            <label>Özet / Giriş Metni</label>
                             <textarea name="excerpt" class="form-control" rows="2">{{ old('excerpt', $service->excerpt) }}</textarea>
                         </div>
                         <div class="form-group">
-                            <label>İçerik <span class="text-danger">*</span></label>
-                            <textarea name="content" class="form-control" rows="12">{{ old('content', $service->content) }}</textarea>
+                            <label>İçerik / Açıklama <span class="text-danger">*</span></label>
+                            <textarea name="content" class="form-control" rows="10">{{ old('content', $service->content) }}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Kapsam / Özellikler</label>
+                            <div id="features-list">
+                                @php $feats = old('features', $service->features ?? []); @endphp
+                                @forelse($feats as $feat)
+                                    <div class="input-group mb-1 feature-row">
+                                        <input type="text" name="features[]" class="form-control" value="{{ $feat }}">
+                                        <div class="input-group-append">
+                                            <button type="button" class="btn btn-outline-danger btn-remove-feature"><i class="fas fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                @empty
+                                    <div class="input-group mb-1 feature-row">
+                                        <input type="text" name="features[]" class="form-control" placeholder="Özellik ekle...">
+                                        <div class="input-group-append">
+                                            <button type="button" class="btn btn-outline-danger btn-remove-feature"><i class="fas fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                @endforelse
+                            </div>
+                            <button type="button" id="btn-add-feature" class="btn btn-sm btn-outline-secondary mt-1">
+                                <i class="fas fa-plus mr-1"></i> Özellik Ekle
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -95,15 +137,52 @@
                     <div class="card-header"><h3 class="card-title">Kapak Görseli</h3></div>
                     <div class="card-body">
                         @if($service->cover_image)
-                            <img src="{{ Storage::url($service->cover_image) }}" alt="" class="img-fluid rounded mb-2">
+                            <img src="{{ $service->image_url }}" alt="" class="img-fluid rounded mb-2">
                         @endif
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="cover_image" name="cover_image" accept="image/*">
                             <label class="custom-file-label" for="cover_image">Yeni Görsel Seç</label>
+                        </div>
+                        <div id="cover-preview" class="mt-2 d-none">
+                            <img src="" alt="" class="img-fluid rounded">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </form>
+@stop
+
+@section('js')
+<script>
+    document.getElementById('cover_image').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+            const preview = document.getElementById('cover-preview');
+            preview.querySelector('img').src = ev.target.result;
+            preview.classList.remove('d-none');
+        };
+        reader.readAsDataURL(file);
+        document.querySelector('.custom-file-label').textContent = file.name;
+    });
+
+    document.getElementById('btn-add-feature').addEventListener('click', function() {
+        const row = document.createElement('div');
+        row.className = 'input-group mb-1 feature-row';
+        row.innerHTML = '<input type="text" name="features[]" class="form-control" placeholder="Özellik ekle...">'
+            + '<div class="input-group-append"><button type="button" class="btn btn-outline-danger btn-remove-feature"><i class="fas fa-times"></i></button></div>';
+        document.getElementById('features-list').appendChild(row);
+        row.querySelector('input').focus();
+    });
+
+    document.getElementById('features-list').addEventListener('click', function(e) {
+        const btn = e.target.closest('.btn-remove-feature');
+        if (!btn) return;
+        const rows = document.querySelectorAll('.feature-row');
+        if (rows.length > 1) btn.closest('.feature-row').remove();
+        else btn.closest('.feature-row').querySelector('input').value = '';
+    });
+</script>
 @stop

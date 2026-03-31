@@ -244,82 +244,14 @@
             </div>
         </div>
         <div class="project-wrapper space__bottom--m5" id="project-justify-wrapper" style="max-width: 1200px; margin: 0 auto;">
-            {{-- Hafriyat ve Temel Kazı --}}
+            @foreach($featuredProjects as $p)
             <div class="single-project-wrapper">
-                <a class="single-project-item" href="/projeler">
-                    <img width="440" height="360" src="{{ asset('assets/img/projects/real-project-01.webp') }}" class="img-fluid" alt="Hafriyat ve Temel Kazı">
-                    <span class="single-project-title">Hafriyat ve Temel Kazı</span>
+                <a class="single-project-item" href="{{ route('project.show', $p->slug) }}">
+                    <img width="440" height="360" src="{{ $p->image_url }}" class="img-fluid" alt="{{ $p->title }}">
+                    <span class="single-project-title">{{ $p->title }}</span>
                 </a>
             </div>
-            <div class="single-project-wrapper">
-                <a class="single-project-item" href="/projeler">
-                    <img width="440" height="360" src="{{ asset('assets/img/projects/real-project-04.webp') }}" class="img-fluid" alt="Altyapı Zemin Hazırlığı">
-                    <span class="single-project-title">Altyapı Zemin Hazırlığı</span>
-                </a>
-            </div>
-            <div class="single-project-wrapper">
-                <a class="single-project-item" href="/projeler">
-                    <img width="440" height="360" src="{{ asset('assets/img/projects/real-project-09.webp') }}" class="img-fluid" alt="Derin Temel Kazısı">
-                    <span class="single-project-title">Derin Temel Kazısı</span>
-                </a>
-            </div>
-            {{-- Toprak Taşıma ve Araç Filosu --}}
-            <div class="single-project-wrapper">
-                <a class="single-project-item" href="/projeler">
-                    <img width="440" height="360" src="{{ asset('assets/img/projects/real-project-02.webp') }}" class="img-fluid" alt="Toprak Taşıma Operasyonu">
-                    <span class="single-project-title">Toprak Taşıma Operasyonu</span>
-                </a>
-            </div>
-            <div class="single-project-wrapper">
-                <a class="single-project-item" href="/projeler">
-                    <img width="440" height="360" src="{{ asset('assets/img/projects/real-project-08.webp') }}" class="img-fluid" alt="Kamyon Filosu Sahada">
-                    <span class="single-project-title">Araç Filosu Sahada</span>
-                </a>
-            </div>
-            <div class="single-project-wrapper">
-                <a class="single-project-item" href="/projeler">
-                    <img width="440" height="360" src="{{ asset('assets/img/projects/real-project-15.webp') }}" class="img-fluid" alt="Yük Taşıma ve Lojistik">
-                    <span class="single-project-title">Yük Taşıma ve Lojistik</span>
-                </a>
-            </div>
-            {{-- Açık Saha ve Arazi Operasyonları --}}
-            <div class="single-project-wrapper">
-                <a class="single-project-item" href="/projeler">
-                    <img width="440" height="360" src="{{ asset('assets/img/projects/real-project-24.webp') }}" class="img-fluid" alt="Açık Saha Kazı Çalışması">
-                    <span class="single-project-title">Açık Saha Kazı Çalışması</span>
-                </a>
-            </div>
-            <div class="single-project-wrapper">
-                <a class="single-project-item" href="/projeler">
-                    <img width="440" height="360" src="{{ asset('assets/img/projects/real-project-31.webp') }}" class="img-fluid" alt="Arazi Düzenleme">
-                    <span class="single-project-title">Arazi Düzenleme</span>
-                </a>
-            </div>
-            <div class="single-project-wrapper">
-                <a class="single-project-item" href="/projeler">
-                    <img width="440" height="360" src="{{ asset('assets/img/projects/real-project-35.webp') }}" class="img-fluid" alt="İş Makinesi Operasyonu">
-                    <span class="single-project-title">İş Makinesi Operasyonu</span>
-                </a>
-            </div>
-            {{-- Mihra Konakları Konut Projesi --}}
-            <div class="single-project-wrapper">
-                <a class="single-project-item" href="/projeler">
-                    <img width="440" height="360" src="{{ asset('assets/img/projects/real-project-41.webp') }}" class="img-fluid" alt="Mihra Konakları – 3D Görsel">
-                    <span class="single-project-title">Mihra Konakları – Ön Cephe</span>
-                </a>
-            </div>
-            <div class="single-project-wrapper">
-                <a class="single-project-item" href="/projeler">
-                    <img width="440" height="360" src="{{ asset('assets/img/projects/real-project-44.webp') }}" class="img-fluid" alt="Mihra Konakları – Peyzaj">
-                    <span class="single-project-title">Mihra Konakları – Peyzaj</span>
-                </a>
-            </div>
-            <div class="single-project-wrapper">
-                <a class="single-project-item" href="/projeler">
-                    <img width="440" height="360" src="{{ asset('assets/img/projects/real-project-50.webp') }}" class="img-fluid" alt="Mihra Konakları – Saha">
-                    <span class="single-project-title">Mihra Konakları – Şantiye</span>
-                </a>
-            </div>
+            @endforeach
         </div>
     </div>
     <!--====================  End of project area  ====================-->

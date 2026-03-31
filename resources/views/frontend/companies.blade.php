@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-lg-5 d-flex align-items-end justify-content-lg-end">
                     <div style="text-align:right;">
-                        <span style="display:block; font-size:72px; font-weight:700; color:#f0e8d4; line-height:1; font-family:'Rajdhani',sans-serif; letter-spacing:-2px;">05</span>
+                        <span style="display:block; font-size:72px; font-weight:700; color:#f0e8d4; line-height:1; font-family:'Rajdhani',sans-serif; letter-spacing:-2px;">{{ str_pad($companies->count(), 2, '0', STR_PAD_LEFT) }}</span>
                         <span style="font-size:13px; text-transform:uppercase; letter-spacing:3px; color:#999;">Şirket</span>
                     </div>
                 </div>
@@ -44,74 +44,24 @@
             <!-- Divider -->
             <div style="border-top:2px solid #1a1a1a; margin-bottom:0;"></div>
 
-            @php
-            $companies = [
-                [
-                    'number'  => '01',
-                    'slug'    => 'karacavus-proje-gelistirme',
-                    'name'    => 'Karaçavuş Proje Geliştirme İnşaat Ltd. Şti.',
-                    'tagline' => 'Grubun kurucu ve ana şirketi',
-                    'sector'  => 'Hafriyat · İnşaat · Proje Geliştirme',
-                    'icon'    => 'flaticon-020-planning',
-                    'desc'    => '25 yılı aşkın tecrübesiyle konut, sanayi, altyapı ve ulaşım projelerinde yurt genelinde yüzlerce başarılı işe imza atmış, grubun lokomotif kuruluşu.',
-                ],
-                [
-                    'number'  => '02',
-                    'slug'    => 'asel-insaat-hafriyat',
-                    'name'    => 'Asel Alt ve Üst Yapı İnşaat Hafriyat Otomotiv San. ve Tic. Ltd. Şti.',
-                    'tagline' => 'Altyapı, üstyapı ve otomotiv hizmetleri',
-                    'sector'  => 'Altyapı · Üstyapı · Otomotiv',
-                    'icon'    => 'flaticon-008-machine-1',
-                    'desc'    => 'Karayolu, köprü, viyadük ve kentsel dönüşüm projelerinde uzmanlaşmış; inşaat ve otomotiv hizmetlerini tek çatı altında birleştiren çok disiplinli yapı.',
-                ],
-                [
-                    'number'  => '03',
-                    'slug'    => 'omkar-insaat-hafriyat',
-                    'name'    => 'Ömkar Otomotiv İnşaat Sanayi ve Tic. Ltd. Şti.',
-                    'tagline' => 'Binek, hafriyat kamyonu ve iş makinesi alım satımında uzman galeri',
-                    'sector'  => 'Otomotiv · Ticari Araç',
-                    'icon'    => 'flaticon-006-truck',
-                    'desc'    => 'Binek araç alım satımından hafriyat kamyonu ve iş makinesi ticaretine uzanan geniş portföyüyle grubun otomotiv kanadı; sahibinden.com üzerinden aktif ilan yönetimiyle hizmet vermektedir.',
-                ],
-                [
-                    'number'  => '04',
-                    'slug'    => 'nayifogullari-insaat',
-                    'name'    => 'Nayifoğulları İnşaat San. ve Tic. Ltd. Şti.',
-                    'tagline' => 'Genel inşaat ve sanayi hizmetleri',
-                    'sector'  => 'İnşaat · Sanayi · Ticaret',
-                    'icon'    => 'flaticon-037-forklift',
-                    'desc'    => 'Güçlü sahaya dayalı deneyim ve geniş ticari ağıyla genel inşaat, nakliye ve tedarik zinciri yönetiminde grubun kapasitesini genişleten şirket.',
-                ],
-                [
-                    'number'  => '05',
-                    'slug'    => 'nayifogullari-ymk-yikim',
-                    'name'    => 'Nayifoğulları İnşaat YMK Yıkım Adi Ortaklığı',
-                    'tagline' => 'Kontrollü yıkım ve kentsel dönüşüm',
-                    'sector'  => 'Yıkım · Kentsel Dönüşüm',
-                    'icon'    => 'flaticon-016-gear',
-                    'desc'    => 'Lisanslı yıkım ekipleri ve iş güvenliği odaklı anlayışıyla kentsel dönüşüm projelerinde kontrollü, hızlı ve güvenli yıkım hizmetleri sunan uzman ortaklık.',
-                ],
-            ];
-            @endphp
-
             @foreach($companies as $c)
-            <a href="{{ route('company.show', $c['slug']) }}" class="company-list-item" style="display:block; text-decoration:none; color:inherit; border-bottom:1px solid #e5e5e5;">
+            <a href="{{ route('company.show', $c->slug) }}" class="company-list-item" style="display:block; text-decoration:none; color:inherit; border-bottom:1px solid #e5e5e5;">
                 <div class="row align-items-center" style="padding:48px 0; transition:background .25s;">
                     <!-- Number -->
                     <div class="col-lg-1 col-2 d-none d-md-flex align-items-center">
-                        <span style="font-size:48px; font-weight:700; color:#e8e0d0; font-family:'Rajdhani',sans-serif; line-height:1; display:block;">{{ $c['number'] }}</span>
+                        <span style="font-size:48px; font-weight:700; color:#e8e0d0; font-family:'Rajdhani',sans-serif; line-height:1; display:block;">{{ $c->number }}</span>
                     </div>
                     <!-- Icon -->
                     <div class="col-auto d-none d-lg-flex align-items-center" style="padding-right:30px;">
                         <div style="width:64px; height:64px; background:#1a1a1a; border-radius:2px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                            <i class="{{ $c['icon'] }}" style="font-size:28px; color:#c8a951;"></i>
+                            <i class="{{ $c->icon }}" style="font-size:28px; color:#c8a951;"></i>
                         </div>
                     </div>
                     <!-- Text -->
                     <div class="col">
-                        <span style="display:block; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:#c8a951; margin-bottom:6px; font-family:'Rajdhani',sans-serif;">{{ $c['sector'] }}</span>
-                        <h3 style="font-size:20px; font-weight:700; color:#1a1a1a; margin:0 0 8px; line-height:1.3; font-family:'Rajdhani',sans-serif; text-transform:uppercase;">{{ $c['name'] }}</h3>
-                        <p style="font-size:14px; color:#888; margin:0; line-height:1.7; max-width:640px;">{{ $c['desc'] }}</p>
+                        <span style="display:block; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:#c8a951; margin-bottom:6px; font-family:'Rajdhani',sans-serif;">{{ $c->sector }}</span>
+                        <h3 style="font-size:20px; font-weight:700; color:#1a1a1a; margin:0 0 8px; line-height:1.3; font-family:'Rajdhani',sans-serif; text-transform:uppercase;">{{ $c->name }}</h3>
+                        <p style="font-size:14px; color:#888; margin:0; line-height:1.7; max-width:640px;">{{ $c->about }}</p>
                     </div>
                     <!-- CTA -->
                     <div class="col-lg-2 col-auto d-none d-lg-flex align-items-center justify-content-end">
