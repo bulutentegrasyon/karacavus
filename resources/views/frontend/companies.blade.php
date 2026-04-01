@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-lg-5 d-flex align-items-end justify-content-lg-end">
                     <div style="text-align:right;">
-                        <span style="display:block; font-size:72px; font-weight:700; color:#f0e8d4; line-height:1; font-family:'Rajdhani',sans-serif; letter-spacing:-2px;">{{ str_pad($companies->count(), 2, '0', STR_PAD_LEFT) }}</span>
+                        <span style="display:block; font-size:72px; font-weight:700; color:#1B3A6B; line-height:1; font-family:'Rajdhani',sans-serif; letter-spacing:-2px;">{{ str_pad($companies->count(), 2, '0', STR_PAD_LEFT) }}</span>
                         <span style="font-size:13px; text-transform:uppercase; letter-spacing:3px; color:#999;">Şirket</span>
                     </div>
                 </div>
@@ -53,19 +53,19 @@
                     </div>
                     <!-- Icon -->
                     <div class="col-auto d-none d-lg-flex align-items-center" style="padding-right:30px;">
-                        <div style="width:64px; height:64px; background:#1a1a1a; border-radius:2px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                            <i class="{{ $c->icon }}" style="font-size:28px; color:#c8a951;"></i>
+                        <div style="width:64px; height:64px; background:#1B3A6B; border-radius:2px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                            <i class="{{ $c->icon }}" style="font-size:28px; color:#1B3A6B;"></i>
                         </div>
                     </div>
                     <!-- Text -->
                     <div class="col">
-                        <span style="display:block; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:#c8a951; margin-bottom:6px; font-family:'Rajdhani',sans-serif;">{{ $c->sector }}</span>
+                        <span style="display:block; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:#1B3A6B; margin-bottom:6px; font-family:'Rajdhani',sans-serif;">{{ $c->sector }}</span>
                         <h3 style="font-size:20px; font-weight:700; color:#1a1a1a; margin:0 0 8px; line-height:1.3; font-family:'Rajdhani',sans-serif; text-transform:uppercase;">{{ $c->name }}</h3>
                         <p style="font-size:14px; color:#888; margin:0; line-height:1.7; max-width:640px;">{{ $c->about }}</p>
                     </div>
                     <!-- CTA -->
                     <div class="col-lg-2 col-auto d-none d-lg-flex align-items-center justify-content-end">
-                        <span style="display:inline-flex; align-items:center; gap:8px; font-size:12px; text-transform:uppercase; letter-spacing:2px; font-weight:600; color:#1a1a1a; font-family:'Rajdhani',sans-serif; border-bottom:2px solid #c8a951; padding-bottom:2px;">
+                        <span style="display:inline-flex; align-items:center; gap:8px; font-size:12px; text-transform:uppercase; letter-spacing:2px; font-weight:600; color:#1a1a1a; font-family:'Rajdhani',sans-serif; border-bottom:2px solid #1B3A6B; padding-bottom:2px;">
                             İncele <i class="fa fa-arrow-right" style="font-size:10px;"></i>
                         </span>
                     </div>
@@ -82,7 +82,7 @@
     <!-- Hover style -->
     <style>
         .company-list-item:hover { background:#fafaf8; }
-        .company-list-item:hover h3 { color:#c8a951; }
+        .company-list-item:hover h3 { color:#1B3A6B; }
     </style>
 
     <!--====================  CTA area ====================-->
@@ -92,7 +92,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-8 space__bottom__md--30 space__bottom__lm--30">
                         <h3 style="font-size:38px; font-weight:700; color:#fff; font-family:'Rajdhani',sans-serif; margin:0 0 12px; text-transform:uppercase;">
-                            İş Birliği <span style="color:#c8a951;">Yapalım</span>
+                            İş Birliği <span style="color:#fff;">Yapalım</span>
                         </h3>
                         <p style="color:#ccc; font-size:16px; margin:0; line-height:1.7;">Projeleriniz için Karaçavuş Şirketler Grubu'nun gücünden yararlanın. Uzman ekibimiz sizinle iletişime geçmeye hazır.</p>
                     </div>

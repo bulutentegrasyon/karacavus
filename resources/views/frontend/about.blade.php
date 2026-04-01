@@ -54,27 +54,27 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="single-feature-item" style="background:#fff;padding:30px;border-left:4px solid #f0b429;box-shadow:0 2px 15px rgba(0,0,0,.07);">
+                    <div class="single-feature-item" style="background:#fff;padding:30px;border-left:4px solid #1B3A6B;box-shadow:0 2px 15px rgba(0,0,0,.07);">
                         <div class="single-feature-item__icon mb-3">
-                            <i class="flaticon-008-machine-1" style="font-size:40px;color:#f0b429;"></i>
+                            <i class="flaticon-008-machine-1" style="font-size:40px;color:#1B3A6B;"></i>
                         </div>
                         <h4 class="single-feature-item__title" style="font-size:20px;font-weight:700;">Hafriyat <small style="font-size:13px;color:#999;font-weight:400;">2001'den beri</small></h4>
                         <p style="color:#666;font-size:14px;line-height:1.8;">2001 yılından bu yana sürdürdüğümüz hafriyat faaliyetlerimiz; güçlü makine parkuru, deneyimli ekip ve güvenli saha yönetimi anlayışıyla yürütülmektedir. Altyapı, üstyapı ve büyük ölçekli projelerde sağlam zemin, doğru planlama ve zamanında teslim prensipleriyle hizmet vermekteyiz.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="single-feature-item" style="background:#fff;padding:30px;border-left:4px solid #f0b429;box-shadow:0 2px 15px rgba(0,0,0,.07);">
+                    <div class="single-feature-item" style="background:#fff;padding:30px;border-left:4px solid #1B3A6B;box-shadow:0 2px 15px rgba(0,0,0,.07);">
                         <div class="single-feature-item__icon mb-3">
-                            <i class="flaticon-006-truck" style="font-size:40px;color:#f0b429;"></i>
+                            <i class="flaticon-006-truck" style="font-size:40px;color:#1B3A6B;"></i>
                         </div>
                         <h4 class="single-feature-item__title" style="font-size:20px;font-weight:700;">Otomotiv <small style="font-size:13px;color:#999;font-weight:400;">2021'den beri</small></h4>
                         <p style="color:#666;font-size:14px;line-height:1.8;">2021 yılında bünyemize kattığımız otomotiv faaliyetlerimizde; kalite, güvenilirlik ve müşteri memnuniyetini esas alan bir hizmet anlayışı benimsemekteyiz. Sektördeki teknolojik gelişmeleri yakından takip ederek sürdürülebilir ve yenilikçi çözümler sunmayı hedefliyoruz.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="single-feature-item" style="background:#fff;padding:30px;border-left:4px solid #f0b429;box-shadow:0 2px 15px rgba(0,0,0,.07);">
+                    <div class="single-feature-item" style="background:#fff;padding:30px;border-left:4px solid #1B3A6B;box-shadow:0 2px 15px rgba(0,0,0,.07);">
                         <div class="single-feature-item__icon mb-3">
-                            <i class="flaticon-020-planning" style="font-size:40px;color:#f0b429;"></i>
+                            <i class="flaticon-020-planning" style="font-size:40px;color:#1B3A6B;"></i>
                         </div>
                         <h4 class="single-feature-item__title" style="font-size:20px;font-weight:700;">İnşaat <small style="font-size:13px;color:#999;font-weight:400;">2025'ten beri</small></h4>
                         <p style="color:#666;font-size:14px;line-height:1.8;">2025 yılında adım attığımız inşaat sektöründe; modern yaşam alanları, sağlam yapılar ve uzun ömürlü projeler üretmeyi amaçlıyoruz. Planlama aşamasından teslim sürecine kadar kalite standartlarını ön planda tutarak <strong>Mutluluğu İnşa ediyoruz.</strong></p>
@@ -85,17 +85,17 @@
             {{-- Vizyon & Değerler --}}
             <div class="row mt-5">
                 <div class="col-lg-6 mb-4">
-                    <h3 style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:26px;border-bottom:2px solid #f0b429;padding-bottom:10px;margin-bottom:20px;">Vizyonumuz</h3>
+                    <h3 style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:26px;border-bottom:2px solid #1B3A6B;padding-bottom:10px;margin-bottom:20px;">Vizyonumuz</h3>
                     <p style="color:#555;line-height:1.9;">Şirketler grubu olarak vizyonumuz; faaliyet gösterdiğimiz tüm sektörlerde güvenilirliği ile tercih edilen, kalite standartlarını yükselten ve sürdürülebilir büyümeyi hedefleyen güçlü bir marka topluluğu olmaktır. Gelenekten gelen tecrübemizi yenilikçi bakış açısıyla birleştirerek, geleceğe değer katan projeler üretmeyi amaçlıyoruz.</p>
                 </div>
                 <div class="col-lg-6 mb-4">
-                    <h3 style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:26px;border-bottom:2px solid #f0b429;padding-bottom:10px;margin-bottom:20px;">Değerlerimiz</h3>
+                    <h3 style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:26px;border-bottom:2px solid #1B3A6B;padding-bottom:10px;margin-bottom:20px;">Değerlerimiz</h3>
                     <ul style="list-style:none;padding:0;color:#555;line-height:2.2;">
-                        <li><i class="fa fa-check" style="color:#f0b429;margin-right:8px;"></i> Güven ve şeffaflık</li>
-                        <li><i class="fa fa-check" style="color:#f0b429;margin-right:8px;"></i> Kalite ve süreklilik</li>
-                        <li><i class="fa fa-check" style="color:#f0b429;margin-right:8px;"></i> Sorumluluk bilinci</li>
-                        <li><i class="fa fa-check" style="color:#f0b429;margin-right:8px;"></i> Yenilikçi yaklaşım</li>
-                        <li><i class="fa fa-check" style="color:#f0b429;margin-right:8px;"></i> Uzun vadeli iş ortaklıkları</li>
+                        <li><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i> Güven ve şeffaflık</li>
+                        <li><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i> Kalite ve süreklilik</li>
+                        <li><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i> Sorumluluk bilinci</li>
+                        <li><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i> Yenilikçi yaklaşım</li>
+                        <li><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i> Uzun vadeli iş ortaklıkları</li>
                     </ul>
                 </div>
             </div>

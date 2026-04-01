@@ -44,7 +44,7 @@
                                     <div class="col-lg-2">
                                         <div class="brand-logo">
                                             <a href="/">
-                                                <img width="142" height="31" src="{{ asset('assets/img/logo.webp') }}" class="img-fluid" alt="">
+                                                <img width="142" height="31" src="{{ asset('assets/img/logo-white.webp') }}" class="img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -56,7 +56,7 @@
                                                     <li><a href="/hakkimizda">Hakkımızda</a></li>
                                                     <li><a href="/hizmetler">Hizmetler</a></li>
                                                     <li><a href="/projeler">Projeler</a></li>
-                                                    <li><a href="/referanslar">Referanslar</a></li>
+                                                    {{-- <li><a href="/referanslar">Referanslar</a></li> --}}
                                                     <li><a href="/sirketlerimiz">Şirketlerimiz</a></li>
                                                     <li><a href="/blog">Blog</a></li>
                                                     <li><a href="/iletisim">İletişim</a></li>
@@ -121,7 +121,7 @@
                         <li><a href="/hakkimizda">Hakkımızda</a></li>
                         <li><a href="/hizmetler">Hizmetler</a></li>
                         <li><a href="/projeler">Projeler</a></li>
-                        <li><a href="/referanslar">Referanslar</a></li>
+                        {{-- <li><a href="/referanslar">Referanslar</a></li> --}}
                         <li><a href="/sirketlerimiz">Şirketlerimiz</a></li>
                         <li><a href="/blog">Blog</a></li>
                         <li><a href="/iletisim">İletişim</a></li>
@@ -205,7 +205,7 @@
                             <li><a href="/hakkimizda">Hakkımızda</a></li>
                             <li><a href="/hizmetler">Hizmetlerimiz</a></li>
                             <li><a href="/projeler">Projelerimiz</a></li>
-                            <li><a href="/referanslar">Referanslar</a></li>
+                            {{-- <li><a href="/referanslar">Referanslar</a></li> --}}
                             <li><a href="/sirketlerimiz">Şirketlerimiz</a></li>
                             <li><a href="/blog">Blog</a></li>
                             <li><a href="/iletisim">İletişim</a></li>
@@ -221,7 +221,7 @@
                             <li><a href="/hizmetler/altyapi-insaati">Altyapı İnşaatı</a></li>
                             <li><a href="/hizmetler/ustyapi-ve-yapi-insaati">Üstyapı ve Yapı İnşaatı</a></li>
                             <li><a href="/hizmetler/kontrollu-yikim">Kontrollü Yıkım</a></li>
-                            <li><a href="/hizmetler" style="color:#c8a951; font-weight:600;">Tüm Hizmetler &rarr;</a></li>
+                            <li><a href="/hizmetler" style="color:#a8bfe0; font-weight:600;">Tüm Hizmetler &rarr;</a></li>
                         </ul>
                     </div>
                 </div>
@@ -248,17 +248,14 @@
         </div>
     </div>
     <!-- copyright text -->
-    <div class="copyright-area background-color--deep-dark space__inner--y30">
+    <div class="copyright-area background-color--deep-dark" style="padding:10px 0;">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p class="copyright-text">&copy; Karaçavuş Şirketler Grubu {{ date('Y') }} — Tüm Hakları Saklıdır</p>
-                    <p class="copyright-text mt-2">
-                        <a href="https://swantro.com" target="_blank" class="footer-credit" title="Swantro Yazılım tarafından hazırlanmıştır">
-                            <img src="https://swantro.com/public/swantro_web/assets/images/resources/logo.png" alt="Swantro" style="height:22px;opacity:.7;filter:brightness(0) invert(1);vertical-align:middle;">
-                        </a>
-                    </p>
-                </div>
+            <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap">
+                <p class="copyright-text mb-0" style="font-size:12px;">&copy; Karaçavuş Şirketler Grubu {{ date('Y') }} — Tüm Hakları Saklıdır</p>
+                <span class="copyright-text" style="font-size:12px;opacity:.4;">|</span>
+                <a href="https://swantro.com" target="_blank" class="footer-credit" title="Swantro Yazılım tarafından hazırlanmıştır">
+                    <img src="https://swantro.com/public/swantro_web/assets/images/resources/logo.png" alt="Swantro" style="height:18px;opacity:.6;filter:brightness(0) invert(1);vertical-align:middle;">
+                </a>
             </div>
         </div>
     </div>
@@ -268,6 +265,18 @@
         <i class="fa fa-angle-up"></i>
     </button>
     <!--====================  End of scroll top  ====================-->
+    <!--====================  mobile cta bar ====================-->
+    <div class="mobile-cta-bar d-flex d-lg-none">
+        <a href="tel:+905397305065" class="mobile-cta-bar__btn mobile-cta-bar__btn--call">
+            <i class="fa fa-phone"></i>
+            <span>Hemen Ara</span>
+        </a>
+        <a href="https://wa.me/905397305065" target="_blank" rel="noopener" class="mobile-cta-bar__btn mobile-cta-bar__btn--whatsapp">
+            <i class="fa fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+    <!--====================  End of mobile cta bar  ====================-->
     <!-- JS
     ============================================ -->
     <!-- Modernizer JS -->
@@ -296,5 +305,29 @@
     <script src="{{ asset('assets/js/plugins/mailchimp-ajax-submit.min.js') }}"></script>
     <!-- Main JS -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script>
+    (function() {
+        var items, idx = 0, userHovering = false;
+        function activate() {
+            if (userHovering) return;
+            items.forEach(function(el) { el.classList.remove('is-active'); });
+            items[idx].classList.add('is-active');
+            idx = (idx + 1) % items.length;
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            items = Array.from(document.querySelectorAll('.brand-logo-wrapper .brand-item'));
+            if (!items.length) return;
+            activate();
+            setInterval(activate, 1800);
+            items.forEach(function(el) {
+                el.addEventListener('mouseenter', function() {
+                    userHovering = true;
+                    items.forEach(function(x) { x.classList.remove('is-active'); });
+                });
+                el.addEventListener('mouseleave', function() { userHovering = false; });
+            });
+        });
+    })();
+    </script>
 </body>
 </html>

@@ -11,8 +11,8 @@
     font-family:'Rajdhani',sans-serif; font-weight:700; border:2px solid #e0e0e0;
     background:#fff; color:#888; cursor:pointer; transition:.2s; border-radius:2px;
 }
-.ref-filter-btn.active, .ref-filter-btn:hover { border-color:#c8a951; color:#c8a951; }
-.ref-filter-btn.active { background:#c8a951; color:#fff; }
+.ref-filter-btn.active, .ref-filter-btn:hover { border-color:#1B3A6B; color:#1B3A6B; }
+.ref-filter-btn.active { background:#1B3A6B; color:#fff; }
 
 .ref-card {
     background:#fff; border:1px solid #efefef; border-radius:2px;
@@ -20,11 +20,11 @@
     display:flex; flex-direction:column; height:100%; cursor:pointer;
     text-decoration:none; color:inherit;
 }
-.ref-card:hover { box-shadow:0 8px 32px rgba(0,0,0,.08); border-color:#c8a951; }
+.ref-card:hover { box-shadow:0 8px 32px rgba(0,0,0,.08); border-color:#1B3A6B; }
 
 .ref-num {
     font-size:11px; font-family:'Rajdhani',sans-serif; letter-spacing:2px;
-    color:#c8a951; font-weight:700; text-transform:uppercase; margin-bottom:10px;
+    color:#1B3A6B; font-weight:700; text-transform:uppercase; margin-bottom:10px;
 }
 .ref-name {
     font-size:14px; font-weight:700; color:#1a1a1a; font-family:'Rajdhani',sans-serif;
@@ -32,17 +32,17 @@
 }
 .ref-meta { display:flex; flex-direction:column; gap:8px; margin-top:auto; padding-top:16px; border-top:1px solid #f0f0f0; }
 .ref-meta-row { display:flex; align-items:center; gap:8px; font-size:12px; color:#666; }
-.ref-meta-icon { width:18px; text-align:center; color:#c8a951; font-size:11px; flex-shrink:0; }
+.ref-meta-icon { width:18px; text-align:center; color:#1B3A6B; font-size:11px; flex-shrink:0; }
 .ref-status {
     display:inline-block; font-size:10px; letter-spacing:1.5px; text-transform:uppercase;
     font-family:'Rajdhani',sans-serif; font-weight:700; padding:3px 10px; border-radius:2px;
 }
 .ref-status.tamamlanan { background:#e8f5e9; color:#388e3c; }
-.ref-status.devam_eden { background:#fff8e1; color:#c8a951; }
+.ref-status.devam_eden { background:#e8f0fb;color:#1B3A6B; }
 
 .ref-stats { display:flex; gap:40px; margin-bottom:48px; flex-wrap:wrap; }
 .ref-stat { text-align:center; }
-.ref-stat-num { font-size:40px; font-weight:700; font-family:'Rajdhani',sans-serif; color:#c8a951; line-height:1; }
+.ref-stat-num { font-size:40px; font-weight:700; font-family:'Rajdhani',sans-serif; color:#1B3A6B; line-height:1; }
 .ref-stat-label { font-size:11px; text-transform:uppercase; letter-spacing:2px; color:#999; font-family:'Rajdhani',sans-serif; margin-top:4px; }
 
 .ref-search {
@@ -50,7 +50,7 @@
     font-size:13px; border-radius:2px; outline:none; margin-bottom:40px;
     font-family:'Rajdhani',sans-serif;
 }
-.ref-search:focus { border-color:#c8a951; }
+.ref-search:focus { border-color:#1B3A6B; }
 
 .ref-empty { text-align:center; padding:60px 0; color:#aaa; font-family:'Rajdhani',sans-serif; font-size:14px; text-transform:uppercase; letter-spacing:2px; }
 </style>
@@ -79,8 +79,8 @@
         {{-- Başlık --}}
         <div class="row mb-5">
             <div class="col-lg-8">
-                <span style="font-size:11px;text-transform:uppercase;letter-spacing:3px;color:#c8a951;font-family:'Rajdhani',sans-serif;">Karaçavuş Şirketler Grubu</span>
-                <div style="width:48px;height:3px;background:#c8a951;margin:10px 0 16px;"></div>
+                <span style="font-size:11px;text-transform:uppercase;letter-spacing:3px;color:#1B3A6B;font-family:'Rajdhani',sans-serif;">Karaçavuş Şirketler Grubu</span>
+                <div style="width:48px;height:3px;background:#1B3A6B;margin:10px 0 16px;"></div>
                 <h2 style="font-size:30px;font-weight:700;color:#1a1a1a;font-family:'Rajdhani',sans-serif;text-transform:uppercase;">Tamamladığımız ve Devam Eden Projeler</h2>
                 <p style="color:#777;font-size:15px;line-height:1.8;margin-top:12px;">Yıllar içinde Türkiye'nin önde gelen inşaat, altyapı ve konut projelerinde gerçekleştirdiğimiz hafriyat çalışmalarından bir kesit.</p>
             </div>

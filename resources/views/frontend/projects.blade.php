@@ -51,7 +51,7 @@
                                 </a>
                                 @if($p->category || $p->location)
                                 <div style="padding:12px 16px 4px; font-size:12px; color:#999; font-family:'Rajdhani',sans-serif; text-transform:uppercase; letter-spacing:1px;">
-                                    @if($p->category)<span style="color:#c8a951;">{{ $p->category }}</span>@endif
+                                    @if($p->category)<span style="color:#1B3A6B;">{{ $p->category }}</span>@endif
                                     @if($p->category && $p->location) · @endif
                                     @if($p->location){{ $p->location }}@endif
                                     @if($p->year) · {{ $p->year }}@endif

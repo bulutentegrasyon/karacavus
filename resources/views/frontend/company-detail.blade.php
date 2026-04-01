@@ -34,12 +34,12 @@
                         <span style="font-size:64px; font-weight:700; color:#f0e8d4; line-height:1; font-family:'Rajdhani',sans-serif;">{{ $company['number'] }}</span>
                         <div style="width:1px; height:50px; background:#e0e0e0;"></div>
                         <div style="width:56px; height:56px; background:#1a1a1a; border-radius:2px; display:flex; align-items:center; justify-content:center;">
-                            <i class="{{ $company['icon'] }}" style="font-size:24px; color:#c8a951;"></i>
+                            <i class="{{ $company['icon'] }}" style="font-size:24px; color:#1B3A6B;"></i>
                         </div>
                     </div>
 
                     <!-- Sector tag -->
-                    <span style="display:inline-block; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:#c8a951; margin-bottom:14px; font-family:'Rajdhani',sans-serif;">{{ $company['sector'] }}</span>
+                    <span style="display:inline-block; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:#1B3A6B; margin-bottom:14px; font-family:'Rajdhani',sans-serif;">{{ $company['sector'] }}</span>
 
                     <!-- Full name -->
                     <h1 style="font-size:26px; font-weight:700; color:#1a1a1a; line-height:1.35; font-family:'Rajdhani',sans-serif; text-transform:uppercase; margin-bottom:16px;">
@@ -53,13 +53,13 @@
                     <div class="row" style="margin-bottom:40px;">
                         <div class="col-6">
                             <div style="border:1px solid #e5e5e5; padding:20px; text-align:center; border-radius:2px;">
-                                <span style="display:block; font-size:28px; font-weight:700; color:#c8a951; font-family:'Rajdhani',sans-serif; line-height:1;">{{ $company['established'] }}</span>
+                                <span style="display:block; font-size:28px; font-weight:700; color:#1B3A6B; font-family:'Rajdhani',sans-serif; line-height:1;">{{ $company['established'] }}</span>
                                 <span style="font-size:11px; text-transform:uppercase; letter-spacing:2px; color:#999;">Kuruluş Yılı</span>
                             </div>
                         </div>
                         <div class="col-6">
                             <div style="border:1px solid #e5e5e5; padding:20px; text-align:center; border-radius:2px;">
-                                <span style="display:block; font-size:28px; font-weight:700; color:#c8a951; font-family:'Rajdhani',sans-serif; line-height:1;">{{ 2026 - (int)$company['established'] }}+</span>
+                                <span style="display:block; font-size:28px; font-weight:700; color:#1B3A6B; font-family:'Rajdhani',sans-serif; line-height:1;">{{ 2026 - (int)$company['established'] }}+</span>
                                 <span style="font-size:11px; text-transform:uppercase; letter-spacing:2px; color:#999;">Yıllık Deneyim</span>
                             </div>
                         </div>
@@ -67,14 +67,14 @@
 
                     <!-- Address / Phone -->
                     @if(!empty($company['address']))
-                    <div style="margin-bottom:16px; padding:16px; border-left:3px solid #c8a951; background:#fafafa;">
+                    <div style="margin-bottom:16px; padding:16px; border-left:3px solid #1B3A6B; background:#fafafa;">
                         <div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:{{ !empty($company['phone']) ? '10px' : '0' }};">
-                            <i class="fa fa-map-marker" style="color:#c8a951; margin-top:3px; min-width:14px;"></i>
+                            <i class="fa fa-map-marker" style="color:#1B3A6B; margin-top:3px; min-width:14px;"></i>
                             <span style="font-size:13px; color:#555; line-height:1.6;">{{ $company['address'] }}</span>
                         </div>
                         @if(!empty($company['phone']))
                         <div style="display:flex; align-items:center; gap:10px;">
-                            <i class="fa fa-phone" style="color:#c8a951; min-width:14px;"></i>
+                            <i class="fa fa-phone" style="color:#1B3A6B; min-width:14px;"></i>
                             <a href="tel:+90{{ preg_replace('/\D/', '', $company['phone']) }}" style="font-size:13px; color:#555; text-decoration:none;">{{ $company['phone'] }}</a>
                         </div>
                         @endif
@@ -97,7 +97,7 @@
                     @endif
 
                     <!-- Back link -->
-                    <a href="{{ route('companies') }}" style="display:inline-flex; align-items:center; gap:8px; font-size:12px; text-transform:uppercase; letter-spacing:2px; font-weight:600; color:#1a1a1a; font-family:'Rajdhani',sans-serif; text-decoration:none; border-bottom:2px solid #c8a951; padding-bottom:2px;">
+                    <a href="{{ route('companies') }}" style="display:inline-flex; align-items:center; gap:8px; font-size:12px; text-transform:uppercase; letter-spacing:2px; font-weight:600; color:#1a1a1a; font-family:'Rajdhani',sans-serif; text-decoration:none; border-bottom:2px solid #1B3A6B; padding-bottom:2px;">
                         <i class="fa fa-arrow-left" style="font-size:10px;"></i> Tüm Şirketler
                     </a>
                 </div>
@@ -107,23 +107,23 @@
 
                     <!-- About -->
                     <h4 style="font-size:13px; text-transform:uppercase; letter-spacing:3px; color:#999; margin-bottom:16px; font-family:'Rajdhani',sans-serif;">Hakkında</h4>
-                    <div style="width:48px; height:3px; background:#c8a951; margin-bottom:24px;"></div>
+                    <div style="width:48px; height:3px; background:#1B3A6B; margin-bottom:24px;"></div>
                     <p style="font-size:16px; color:#444; line-height:1.85; margin-bottom:48px;">{{ $company['about'] }}</p>
 
                     <!-- Activities -->
                     <h4 style="font-size:13px; text-transform:uppercase; letter-spacing:3px; color:#999; margin-bottom:16px; font-family:'Rajdhani',sans-serif;">Faaliyet Alanları</h4>
-                    <div style="width:48px; height:3px; background:#c8a951; margin-bottom:24px;"></div>
+                    <div style="width:48px; height:3px; background:#1B3A6B; margin-bottom:24px;"></div>
                     <ul style="list-style:none; padding:0; margin:0 0 48px;">
                         @foreach($company['activities'] as $i => $activity)
                         <li style="display:flex; align-items:flex-start; gap:16px; padding:14px 0; border-bottom:1px solid #f0f0f0;">
-                            <span style="flex-shrink:0; width:28px; height:28px; background:#1a1a1a; border-radius:2px; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#c8a951; font-family:'Rajdhani',sans-serif;">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</span>
+                            <span style="flex-shrink:0; width:28px; height:28px; background:#1B3A6B; border-radius:2px; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#fff; font-family:'Rajdhani',sans-serif;">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</span>
                             <span style="font-size:15px; color:#444; line-height:1.5; padding-top:4px;">{{ $activity }}</span>
                         </li>
                         @endforeach
                     </ul>
 
                     <!-- Vision quote -->
-                    <blockquote style="border-left:4px solid #c8a951; margin:0; padding:20px 24px; background:#fafaf8;">
+                    <blockquote style="border-left:4px solid #1B3A6B; margin:0; padding:20px 24px; background:#fafaf8;">
                         <p style="font-size:15px; color:#555; line-height:1.75; margin:0; font-style:italic;">{{ $company['vision'] }}</p>
                     </blockquote>
                 </div>
@@ -152,8 +152,8 @@
         font-family:'Rajdhani',sans-serif; font-weight:700; border:2px solid #e0e0e0;
         background:#fff; color:#888; cursor:pointer; border-radius:2px; transition:.2s;
     }
-    .cref-filter-btn.active { border-color:#c8a951; background:#c8a951; color:#fff; }
-    .cref-filter-btn:hover:not(.active) { border-color:#c8a951; color:#c8a951; }
+    .cref-filter-btn.active { border-color:#1B3A6B; background:#1B3A6B; color:#fff; }
+    .cref-filter-btn:hover:not(.active) { border-color:#1B3A6B; color:#1B3A6B; }
 
     .cref-item {
         border:1px solid #ececec;
@@ -162,21 +162,21 @@
         background:#fff;
         transition:box-shadow .2s, border-color .2s;
     }
-    .cref-item:hover { border-color:#c8a951; box-shadow:0 2px 12px rgba(200,169,81,.08); }
-    .cref-item.is-open { border-color:#c8a951; box-shadow:0 4px 18px rgba(200,169,81,.12); }
+    .cref-item:hover { border-color:#1B3A6B; box-shadow:0 2px 12px rgba(27,58,107,.08); }
+    .cref-item.is-open { border-color:#1B3A6B; box-shadow:0 4px 18px rgba(27,58,107,.12); }
 
     .cref-trigger {
         display:flex; align-items:center; gap:14px;
         padding:14px 16px; cursor:pointer; user-select:none;
         border-radius:3px; transition:background .15s;
     }
-    .cref-trigger:hover { background:#fffbf0; }
-    .cref-item.is-open .cref-trigger { background:#fffbf0; border-radius:3px 3px 0 0; }
+    .cref-trigger:hover { background:#eef3fa; }
+    .cref-item.is-open .cref-trigger { background:#eef3fa; border-radius:3px 3px 0 0; }
 
     .cref-num {
-        flex-shrink:0; width:34px; height:34px; background:#1a1a1a; border-radius:2px;
+        flex-shrink:0; width:34px; height:34px; background:#1B3A6B; border-radius:2px;
         display:flex; align-items:center; justify-content:center;
-        font-size:11px; font-weight:700; color:#c8a951; font-family:'Rajdhani',sans-serif;
+        font-size:11px; font-weight:700; color:#fff; font-family:'Rajdhani',sans-serif;
     }
     .cref-name { flex:1; font-size:13px; font-weight:700; color:#1a1a1a; font-family:'Rajdhani',sans-serif; text-transform:uppercase; line-height:1.3; }
     .cref-qty  { flex-shrink:0; font-size:12px; color:#999; font-family:'Rajdhani',sans-serif; white-space:nowrap; }
@@ -187,11 +187,11 @@
         flex-shrink:0; display:flex; align-items:center; gap:5px;
         font-size:10px; font-family:'Rajdhani',sans-serif; font-weight:700;
         letter-spacing:1.5px; text-transform:uppercase;
-        color:#c8a951; white-space:nowrap;
+        color:#1B3A6B; white-space:nowrap;
     }
     .cref-expand-hint span { display:none; }
     @media(min-width:768px){ .cref-expand-hint span { display:inline; } }
-    .cref-chevron { flex-shrink:0; color:#c8a951; font-size:16px; transition:transform .25s; }
+    .cref-chevron { flex-shrink:0; color:#1B3A6B; font-size:16px; transition:transform .25s; }
     .cref-item.is-open .cref-chevron { transform:rotate(90deg); }
     .cref-item.is-open .cref-expand-hint { color:#888; }
 
@@ -233,16 +233,16 @@
         background:#fff; color:#555; font-size:12px; font-family:'Rajdhani',sans-serif;
         font-weight:700; cursor:pointer; border-radius:2px; transition:.2s;
     }
-    .cref-page-btn.active { background:#c8a951; border-color:#c8a951; color:#fff; }
-    .cref-page-btn:hover:not(.active) { border-color:#c8a951; color:#c8a951; }
+    .cref-page-btn.active { background:#1B3A6B; border-color:#1B3A6B; color:#fff; }
+    .cref-page-btn:hover:not(.active) { border-color:#1B3A6B; color:#1B3A6B; }
     .cref-page-btn:disabled { opacity:.35; cursor:default; }
     </style>
 
     <div class="cref-section">
         <div class="container">
 
-            <span style="font-size:11px;text-transform:uppercase;letter-spacing:3px;color:#c8a951;font-family:'Rajdhani',sans-serif;">Referanslarımız</span>
-            <div style="width:48px;height:3px;background:#c8a951;margin:10px 0 24px;"></div>
+            <span style="font-size:11px;text-transform:uppercase;letter-spacing:3px;color:#1B3A6B;font-family:'Rajdhani',sans-serif;">Referanslarımız</span>
+            <div style="width:48px;height:3px;background:#1B3A6B;margin:10px 0 24px;"></div>
 
             <div class="cref-filter-bar">
                 <button class="cref-filter-btn active" data-filter="all">Tümü <span style="opacity:.65;font-size:10px;">({{ $references->count() }})</span></button>
@@ -280,14 +280,14 @@
                     <div class="cref-num">{{ str_pad($i+1,2,'0',STR_PAD_LEFT) }}</div>
                     <div class="cref-name">{{ $ref->name }}</div>
                     <div class="cref-qty">{{ $ref->quantity }}</div>
-                    <div class="cref-badge" style="background:{{ $ref->status==='tamamlanan'?'#e8f5e9':'#fff8e1' }};color:{{ $ref->status==='tamamlanan'?'#388e3c':'#c8a951' }};">{{ $ref->status_label }}</div>
+                    <div class="cref-badge" style="background:{{ $ref->status==='tamamlanan'?'#e8f5e9':'#e8f0fb' }};color:{{ $ref->status==='tamamlanan'?'#388e3c':'#1B3A6B' }};">{{ $ref->status_label }}</div>
                     <div class="cref-expand-hint"><span>Detaylar</span> <i class="fa fa-angle-right cref-chevron"></i></div>
                 </div>
 
                 <div class="cref-body">
-                    <div style="display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;padding:6px 14px;border-radius:2px;margin-bottom:16px;">
-                        <i class="fa fa-building" style="color:#c8a951;font-size:11px;"></i>
-                        <span style="font-size:11px;font-weight:700;color:#c8a951;font-family:'Rajdhani',sans-serif;text-transform:uppercase;letter-spacing:2px;">{{ $ref->company ?? '—' }}</span>
+                    <div style="display:inline-flex;align-items:center;gap:8px;background:#1B3A6B;padding:6px 14px;border-radius:2px;margin-bottom:16px;">
+                        <i class="fa fa-building" style="color:#fff;font-size:11px;"></i>
+                        <span style="font-size:11px;font-weight:700;color:#fff;font-family:'Rajdhani',sans-serif;text-transform:uppercase;letter-spacing:2px;">{{ $ref->company ?? '—' }}</span>
                     </div>
                     <div class="cref-meta-grid">
                         <div>
@@ -307,7 +307,7 @@
                     </div>
 
                     @if($ref->description)
-                    <p style="font-size:13px;color:#666;line-height:1.7;border-left:3px solid #c8a951;padding-left:12px;margin-bottom:16px;">{{ $ref->description }}</p>
+                    <p style="font-size:13px;color:#666;line-height:1.7;border-left:3px solid #1B3A6B;padding-left:12px;margin-bottom:16px;">{{ $ref->description }}</p>
                     @endif
 
                     <div class="cref-media-grid">
@@ -349,7 +349,7 @@
             <div id="crefPagination" class="cref-pagination"></div>
 
             <div style="margin-top:24px;">
-                <a href="/referanslar" style="display:inline-flex;align-items:center;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:600;color:#1a1a1a;font-family:'Rajdhani',sans-serif;text-decoration:none;border-bottom:2px solid #c8a951;padding-bottom:2px;">
+                <a href="/referanslar" style="display:inline-flex;align-items:center;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:600;color:#1a1a1a;font-family:'Rajdhani',sans-serif;text-decoration:none;border-bottom:2px solid #1B3A6B;padding-bottom:2px;">
                     Tüm Referanslar <i class="fa fa-arrow-right" style="font-size:10px;"></i>
                 </a>
             </div>
@@ -453,11 +453,11 @@
                 <div class="col-lg-3 col-md-6 space__bottom--30">
                     <a href="{{ route('company.show', $other->slug) }}" style="display:block; text-decoration:none; background:#fff; border:1px solid #e5e5e5; padding:30px 24px; border-radius:2px; transition:box-shadow .25s;" class="other-company-card">
                         <div style="width:48px; height:48px; background:#1a1a1a; border-radius:2px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-                            <i class="{{ $other->icon }}" style="font-size:22px; color:#c8a951;"></i>
+                            <i class="{{ $other->icon }}" style="font-size:22px; color:#1B3A6B;"></i>
                         </div>
-                        <span style="display:block; font-size:10px; text-transform:uppercase; letter-spacing:2px; color:#c8a951; margin-bottom:8px; font-family:'Rajdhani',sans-serif;">{{ $other->sector }}</span>
+                        <span style="display:block; font-size:10px; text-transform:uppercase; letter-spacing:2px; color:#1B3A6B; margin-bottom:8px; font-family:'Rajdhani',sans-serif;">{{ $other->sector }}</span>
                         <h5 style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 12px; line-height:1.4; font-family:'Rajdhani',sans-serif; text-transform:uppercase;">{{ $other->short }}</h5>
-                        <span style="font-size:11px; text-transform:uppercase; letter-spacing:2px; color:#c8a951; font-family:'Rajdhani',sans-serif;">İncele →</span>
+                        <span style="font-size:11px; text-transform:uppercase; letter-spacing:2px; color:#1B3A6B; font-family:'Rajdhani',sans-serif;">İncele →</span>
                     </a>
                 </div>
                 @endforeach
@@ -468,7 +468,7 @@
 
     <style>
         .other-company-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.08); }
-        .other-company-card:hover h5 { color: #c8a951; }
+        .other-company-card:hover h5 { color: #1B3A6B; }
         .ref-list-row:hover { background:#fafaf8; padding-left:8px; }
     </style>
 
@@ -479,7 +479,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-8 space__bottom__md--30 space__bottom__lm--30">
                         <h3 style="font-size:38px; font-weight:700; color:#fff; font-family:'Rajdhani',sans-serif; margin:0 0 12px; text-transform:uppercase;">
-                            İş Birliği <span style="color:#c8a951;">Yapalım</span>
+                            İş Birliği <span style="color:#1B3A6B;">Yapalım</span>
                         </h3>
                         <p style="color:#ccc; font-size:16px; margin:0; line-height:1.7;">Projeleriniz için Karaçavuş Şirketler Grubu'nun gücünden yararlanın. Uzman ekibimiz sizinle iletişime geçmeye hazır.</p>
                     </div>

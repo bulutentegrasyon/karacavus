@@ -87,7 +87,7 @@
             <div class="row align-items-center row-25">
                 <div class="col-md-6">
                     <div class="about-image space__bottom__lm--30">
-                        <img width="521" height="498" src="{{ asset('assets/img/about/about-section-1.webp') }}" class="img-fluid" alt="">
+                        <img width="521" height="498" src="{{ asset('assets/img/about/about-section-1-blue.jpg') }}" class="img-fluid" alt="">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -155,21 +155,25 @@
     <!--====================  service area ====================-->
     <div class="service-area">
         <div class="container">
-            <div class="row">
-                <div class="col-xl-3 col-lg-5">
+            <div class="row align-items-end">
+                <div class="col-xl-3 col-lg-4 d-none d-lg-block">
                     <!-- service banner -->
-                    <div class="service-banner space__bottom__md--40 space__bottom__lm--40">
+                    <div class="service-banner">
                         <img width="328" height="497" src="{{ asset('assets/img/service/service-man.webp') }}" class="float-none float-lg-end" alt="" />
                     </div>
                 </div>
-                <div class="col-xl-9 col-lg-7 mt-0 mt-lg-4">
+                <div class="col-xl-9 col-lg-8 mt-0 mt-lg-4">
                     <!-- section title -->
                     <div class="section-title space__bottom--40">
                         <h3 class="section-title__sub">Hizmetlerimiz</h3>
                         <h2 class="section-title__title">Kapsamlı Hafriyat ve İnşaat Çözümleri</h2>
                     </div>
-                    <!-- service slider -->
-                    <div class="service-slider-wrapper space__bottom__md--40 space__bottom__lm--40 slick-slider-x-gap-30">
+                </div>
+            </div>
+            <!-- service slider — full width so 3 slides fit cleanly -->
+            <div class="row">
+                <div class="col-12" style="overflow:hidden;">
+                    <div class="service-slider-wrapper space__bottom__md--40 space__bottom__lm--40">
                         @forelse($services as $service)
                         <div class="single-service text-center">
                             <div class="single-service__image space__bottom--15">

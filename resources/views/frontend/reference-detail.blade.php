@@ -90,7 +90,7 @@
                 <div class="ref-detail-hero">
                     <img src="{{ $reference->cover_url }}" alt="{{ $reference->name }}">
                     <div class="ref-detail-hero-overlay">
-                        <span style="font-size:10px;text-transform:uppercase;letter-spacing:3px;color:#c8a951;font-family:'Rajdhani',sans-serif;margin-bottom:8px;">{{ $reference->work_type }}</span>
+                        <span style="font-size:10px;text-transform:uppercase;letter-spacing:3px;color:#1B3A6B;font-family:'Rajdhani',sans-serif;margin-bottom:8px;">{{ $reference->work_type }}</span>
                         <h2 style="font-size:20px;font-weight:700;color:#fff;font-family:'Rajdhani',sans-serif;text-transform:uppercase;line-height:1.3;margin:0;">{{ $reference->name }}</h2>
                     </div>
                 </div>
@@ -98,30 +98,30 @@
                 {{-- Info grid --}}
                 <div class="ref-info-grid mb-4">
                     <div class="ref-info-item">
-                        <div class="ref-info-label"><i class="fa fa-cube" style="color:#c8a951;margin-right:4px;"></i> İş Miktarı</div>
+                        <div class="ref-info-label"><i class="fa fa-cube" style="color:#1B3A6B;margin-right:4px;"></i> İş Miktarı</div>
                         <div class="ref-info-value">{{ $reference->quantity ?? '—' }}</div>
                     </div>
                     <div class="ref-info-item">
-                        <div class="ref-info-label"><i class="fa fa-flag" style="color:#c8a951;margin-right:4px;"></i> Durum</div>
+                        <div class="ref-info-label"><i class="fa fa-flag" style="color:#1B3A6B;margin-right:4px;"></i> Durum</div>
                         <div class="ref-info-value">
                             <span style="padding:4px 12px;border-radius:2px;font-size:12px;
-                                background:{{ $reference->status==='tamamlanan' ? '#e8f5e9' : '#fff8e1' }};
-                                color:{{ $reference->status==='tamamlanan' ? '#388e3c' : '#c8a951' }};">
+                                background:{{ $reference->status==='tamamlanan' ? '#e8f5e9' : '#e8f0fb' }};
+                                color:{{ $reference->status==='tamamlanan' ? '#388e3c' : '#1B3A6B' }};">
                                 {{ $reference->status_label }}
                             </span>
                         </div>
                     </div>
                     <div class="ref-info-item">
-                        <div class="ref-info-label"><i class="fa fa-building" style="color:#c8a951;margin-right:4px;"></i> Uygulayan Şirket</div>
+                        <div class="ref-info-label"><i class="fa fa-building" style="color:#1B3A6B;margin-right:4px;"></i> Uygulayan Şirket</div>
                         <div class="ref-info-value">{{ $reference->company }}</div>
                     </div>
                     <div class="ref-info-item">
-                        <div class="ref-info-label"><i class="fa fa-wrench" style="color:#c8a951;margin-right:4px;"></i> İş Türü</div>
+                        <div class="ref-info-label"><i class="fa fa-wrench" style="color:#1B3A6B;margin-right:4px;"></i> İş Türü</div>
                         <div class="ref-info-value">{{ $reference->work_type }}</div>
                     </div>
                     @if($reference->location)
                     <div class="ref-info-item" style="grid-column:span 2;">
-                        <div class="ref-info-label"><i class="fa fa-map-marker" style="color:#c8a951;margin-right:4px;"></i> Lokasyon</div>
+                        <div class="ref-info-label"><i class="fa fa-map-marker" style="color:#1B3A6B;margin-right:4px;"></i> Lokasyon</div>
                         <div class="ref-info-value">{{ $reference->location }}</div>
                     </div>
                     @endif
@@ -129,14 +129,14 @@
 
                 {{-- Description --}}
                 @if($reference->description)
-                <div style="border-left:4px solid #c8a951;padding:20px 24px;background:#fafaf8;">
+                <div style="border-left:4px solid #1B3A6B;padding:20px 24px;background:#fafaf8;">
                     <p style="font-size:15px;color:#555;line-height:1.8;margin:0;">{{ $reference->description }}</p>
                 </div>
                 @endif
 
                 {{-- Back --}}
                 <div style="margin-top:28px;">
-                    <a href="/referanslar" style="display:inline-flex;align-items:center;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:600;color:#1a1a1a;font-family:'Rajdhani',sans-serif;text-decoration:none;border-bottom:2px solid #c8a951;padding-bottom:2px;">
+                    <a href="/referanslar" style="display:inline-flex;align-items:center;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:600;color:#1a1a1a;font-family:'Rajdhani',sans-serif;text-decoration:none;border-bottom:2px solid #1B3A6B;padding-bottom:2px;">
                         <i class="fa fa-arrow-left" style="font-size:10px;"></i> Tüm Referanslar
                     </a>
                 </div>
@@ -144,8 +144,8 @@
 
             {{-- Sağ: Galeri --}}
             <div class="col-lg-6 offset-lg-1 mb-5">
-                <span style="font-size:11px;text-transform:uppercase;letter-spacing:3px;color:#c8a951;font-family:'Rajdhani',sans-serif;">Proje Görselleri</span>
-                <div style="width:48px;height:3px;background:#c8a951;margin:10px 0 28px;"></div>
+                <span style="font-size:11px;text-transform:uppercase;letter-spacing:3px;color:#1B3A6B;font-family:'Rajdhani',sans-serif;">Proje Görselleri</span>
+                <div style="width:48px;height:3px;background:#1B3A6B;margin:10px 0 28px;"></div>
 
                 @php $gallery = $reference->gallery ?? []; @endphp
 
@@ -178,8 +178,8 @@
                 @foreach($others as $other)
                 <div class="col-lg-3 col-md-4 col-6 mb-3">
                     <a href="/referanslar/{{ $other->slug }}" style="display:flex;align-items:center;gap:10px;padding:14px;border:1px solid #e5e5e5;background:#fff;border-radius:2px;text-decoration:none;color:#1a1a1a;transition:border-color .25s;">
-                        <div style="width:36px;height:36px;background:#f5f0e8;border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                            <i class="fa fa-hard-hat" style="font-size:14px;color:#c8a951;"></i>
+                        <div style="width:36px;height:36px;background:#e8f0fb;border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <i class="fa fa-hard-hat" style="font-size:14px;color:#1B3A6B;"></i>
                         </div>
                         <span style="font-size:11px;font-weight:600;font-family:'Rajdhani',sans-serif;text-transform:uppercase;line-height:1.3;">{{ Str::limit($other->name, 35) }}</span>
                     </a>

@@ -33,7 +33,7 @@
                              style="width:100%; height:380px; object-fit:cover;" alt="{{ $project->title }}">
                         @if($project->category)
                         <div style="position:absolute; bottom:0; left:0; right:0; padding:20px 24px; background:linear-gradient(transparent, rgba(0,0,0,0.75));">
-                            <span style="font-size:11px; text-transform:uppercase; letter-spacing:3px; color:#c8a951; font-family:'Rajdhani',sans-serif;">{{ $project->category }}</span>
+                            <span style="font-size:11px; text-transform:uppercase; letter-spacing:3px; color:#1B3A6B; font-family:'Rajdhani',sans-serif;">{{ $project->category }}</span>
                         </div>
                         @endif
                     </div>
@@ -67,15 +67,15 @@
                     </div>
 
                     <!-- Back link -->
-                    <a href="/projeler" style="display:inline-flex; align-items:center; gap:8px; font-size:12px; text-transform:uppercase; letter-spacing:2px; font-weight:600; color:#1a1a1a; font-family:'Rajdhani',sans-serif; text-decoration:none; border-bottom:2px solid #c8a951; padding-bottom:2px;">
+                    <a href="/projeler" style="display:inline-flex; align-items:center; gap:8px; font-size:12px; text-transform:uppercase; letter-spacing:2px; font-weight:600; color:#1a1a1a; font-family:'Rajdhani',sans-serif; text-decoration:none; border-bottom:2px solid #1B3A6B; padding-bottom:2px;">
                         <i class="fa fa-arrow-left" style="font-size:10px;"></i> Tüm Projeler
                     </a>
                 </div>
 
                 <!-- Right: content -->
                 <div class="col-lg-6 offset-lg-1 space__bottom--60">
-                    <span style="display:inline-block; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:#c8a951; margin-bottom:14px; font-family:'Rajdhani',sans-serif;">Proje Detayı</span>
-                    <div style="width:48px; height:3px; background:#c8a951; margin-bottom:24px;"></div>
+                    <span style="display:inline-block; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:#1B3A6B; margin-bottom:14px; font-family:'Rajdhani',sans-serif;">Proje Detayı</span>
+                    <div style="width:48px; height:3px; background:#1B3A6B; margin-bottom:24px;"></div>
 
                     <h1 style="font-size:32px; font-weight:700; color:#1a1a1a; line-height:1.3; font-family:'Rajdhani',sans-serif; text-transform:uppercase; margin-bottom:16px;">
                         {{ $project->title }}
@@ -86,7 +86,7 @@
                     @endif
 
                     <h4 style="font-size:13px; text-transform:uppercase; letter-spacing:3px; color:#999; margin-bottom:16px; font-family:'Rajdhani',sans-serif;">Proje Hakkında</h4>
-                    <div style="width:48px; height:3px; background:#c8a951; margin-bottom:24px;"></div>
+                    <div style="width:48px; height:3px; background:#1B3A6B; margin-bottom:24px;"></div>
                     <p style="font-size:16px; color:#444; line-height:1.85; margin-bottom:48px;">{{ $project->content }}</p>
 
                     @if($project->gallery && count($project->gallery))
@@ -101,7 +101,7 @@
                     @endif
 
                     <!-- CTA -->
-                    <div style="background:#fafaf8; border-left:4px solid #c8a951; padding:28px 32px;">
+                    <div style="background:#fafaf8; border-left:4px solid #1B3A6B; padding:28px 32px;">
                         <p style="font-size:16px; color:#1a1a1a; font-weight:600; margin-bottom:16px; font-family:'Rajdhani',sans-serif;">Bu proje kapsamında hizmet almak ister misiniz?</p>
                         <a href="/iletisim" class="default-btn">Bize Ulaşın</a>
                     </div>

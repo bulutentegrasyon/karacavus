@@ -35,7 +35,7 @@
                              alt="{{ $service->title }}">
                         @if($service->sector)
                         <div style="position:absolute; bottom:0; left:0; right:0; padding:20px 24px; background:linear-gradient(transparent, rgba(0,0,0,0.75));">
-                            <span style="font-size:11px; text-transform:uppercase; letter-spacing:3px; color:#c8a951; font-family:'Rajdhani',sans-serif;">{{ $service->sector }}</span>
+                            <span style="font-size:11px; text-transform:uppercase; letter-spacing:3px; color:#1B3A6B; font-family:'Rajdhani',sans-serif;">{{ $service->sector }}</span>
                         </div>
                         @endif
                     </div>
@@ -43,7 +43,7 @@
                     <!-- Icon + title badge -->
                     <div style="display:flex; align-items:center; gap:16px; margin-bottom:28px;">
                         <div style="width:60px; height:60px; background:#1a1a1a; border-radius:2px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                            <i class="{{ $service->icon }}" style="font-size:26px; color:#c8a951;"></i>
+                            <i class="{{ $service->icon }}" style="font-size:26px; color:#1B3A6B;"></i>
                         </div>
                         @if($service->company)
                         <div>
@@ -60,7 +60,7 @@
                         <ul style="list-style:none; padding:0; margin:0;">
                             @foreach($service->features as $i => $feature)
                             <li style="display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:{{ $i < count($service->features)-1 ? '1px solid #f0f0f0' : 'none' }};">
-                                <span style="width:24px; height:24px; background:#c8a951; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:11px; font-weight:700; color:#fff; font-family:'Rajdhani',sans-serif;">{{ $i+1 }}</span>
+                                <span style="width:24px; height:24px; background:#1B3A6B; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:11px; font-weight:700; color:#fff; font-family:'Rajdhani',sans-serif;">{{ $i+1 }}</span>
                                 <span style="font-size:14px; color:#444;">{{ $feature }}</span>
                             </li>
                             @endforeach
@@ -70,7 +70,7 @@
 
                     <!-- Back link -->
                     <div style="margin-top:28px;">
-                        <a href="/hizmetler" style="display:inline-flex; align-items:center; gap:8px; font-size:12px; text-transform:uppercase; letter-spacing:2px; font-weight:600; color:#1a1a1a; font-family:'Rajdhani',sans-serif; text-decoration:none; border-bottom:2px solid #c8a951; padding-bottom:2px;">
+                        <a href="/hizmetler" style="display:inline-flex; align-items:center; gap:8px; font-size:12px; text-transform:uppercase; letter-spacing:2px; font-weight:600; color:#1a1a1a; font-family:'Rajdhani',sans-serif; text-decoration:none; border-bottom:2px solid #1B3A6B; padding-bottom:2px;">
                             <i class="fa fa-arrow-left" style="font-size:10px;"></i> Tüm Hizmetler
                         </a>
                     </div>
@@ -79,8 +79,8 @@
                 <!-- Right: description -->
                 <div class="col-lg-6 offset-lg-1 space__bottom--60">
 
-                    <span style="display:inline-block; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:#c8a951; margin-bottom:14px; font-family:'Rajdhani',sans-serif;">Hizmet Detayı</span>
-                    <div style="width:48px; height:3px; background:#c8a951; margin-bottom:24px;"></div>
+                    <span style="display:inline-block; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:#1B3A6B; margin-bottom:14px; font-family:'Rajdhani',sans-serif;">Hizmet Detayı</span>
+                    <div style="width:48px; height:3px; background:#1B3A6B; margin-bottom:24px;"></div>
 
                     <h1 style="font-size:32px; font-weight:700; color:#1a1a1a; line-height:1.3; font-family:'Rajdhani',sans-serif; text-transform:uppercase; margin-bottom:16px;">
                         {{ $service->title }}
@@ -91,11 +91,11 @@
                     @endif
 
                     <h4 style="font-size:13px; text-transform:uppercase; letter-spacing:3px; color:#999; margin-bottom:16px; font-family:'Rajdhani',sans-serif;">Hakkında</h4>
-                    <div style="width:48px; height:3px; background:#c8a951; margin-bottom:24px;"></div>
+                    <div style="width:48px; height:3px; background:#1B3A6B; margin-bottom:24px;"></div>
                     <p style="font-size:16px; color:#444; line-height:1.85; margin-bottom:48px;">{{ $service->content }}</p>
 
                     <!-- CTA -->
-                    <div style="background:#fafaf8; border-left:4px solid #c8a951; padding:28px 32px;">
+                    <div style="background:#fafaf8; border-left:4px solid #1B3A6B; padding:28px 32px;">
                         <p style="font-size:16px; color:#1a1a1a; font-weight:600; margin-bottom:16px; font-family:'Rajdhani',sans-serif;">Bu hizmet hakkında teklif almak ister misiniz?</p>
                         <a href="/iletisim" class="default-btn">Bize Ulaşın</a>
                     </div>
@@ -118,7 +118,7 @@
                 <div class="col-lg-3 col-md-4 col-6 space__bottom--30">
                     <a href="{{ route('service.show', $other->slug) }}" style="display:flex; align-items:center; gap:12px; padding:16px; border:1px solid #e5e5e5; background:#fff; border-radius:2px; text-decoration:none; color:#1a1a1a; transition:border-color .25s, box-shadow .25s;">
                         <div style="width:44px; height:44px; background:#f5f0e8; border-radius:2px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                            <i class="{{ $other->icon }}" style="font-size:20px; color:#c8a951;"></i>
+                            <i class="{{ $other->icon }}" style="font-size:20px; color:#1B3A6B;"></i>
                         </div>
                         <span style="font-size:13px; font-weight:600; font-family:'Rajdhani',sans-serif; line-height:1.3; text-transform:uppercase;">{{ $other->title }}</span>
                     </a>
