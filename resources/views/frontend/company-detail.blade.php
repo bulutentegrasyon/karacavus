@@ -136,10 +136,6 @@
     <!--====================  References ====================-->
     @if($references->count() > 0)
     @php
-        $imgPool = array_map(
-            fn($n) => 'assets/img/projects/real-project-'.str_pad($n,2,'0',STR_PAD_LEFT).'.webp',
-            array_merge(range(1,19), range(21,51))
-        );
         $tamamlanan = $references->where('status','tamamlanan')->count();
         $devamEden  = $references->where('status','devam_eden')->count();
     @endphp
@@ -253,13 +249,10 @@
             <div id="crefList">
             @foreach($references as $i => $ref)
             @php
-                $pool = $imgPool; shuffle($pool);
-                /* gallery varsa önceliklendir, yoksa havuzdan al */
                 $gallery = $ref->gallery ?? [];
                 $mediaItems = [];
                 foreach($gallery as $g) {
                     if (str_contains($g, 'youtube.com/embed') || str_contains($g, 'youtu.be')) {
-                        // YouTube embed URL → video
                         $embedSrc = $g;
                         if (str_contains($g, 'youtu.be/')) {
                             $vid = basename(parse_url($g, PHP_URL_PATH));
@@ -270,8 +263,6 @@
                         $mediaItems[] = ['type' => 'img', 'src' => $g];
                     }
                 }
-                $needed = max(0, 6 - count($mediaItems));
-                foreach(array_slice($pool,0,$needed) as $p) { $mediaItems[] = ['type'=>'img','src'=>$p]; }
                 $mediaItems = array_slice($mediaItems, 0, 6);
             @endphp
             <div class="cref-item" data-status="{{ $ref->status }}">
@@ -310,6 +301,7 @@
                     <p style="font-size:13px;color:#666;line-height:1.7;border-left:3px solid #1B3A6B;padding-left:12px;margin-bottom:16px;">{{ $ref->description }}</p>
                     @endif
 
+                    @if(count($mediaItems) > 0)
                     <div class="cref-media-grid">
                         @foreach($mediaItems as $media)
                         @if($media['type']==='video')
@@ -336,6 +328,7 @@
                         @endif
                         @endforeach
                     </div>
+                    @endif
                 </div>
 
             </div>
