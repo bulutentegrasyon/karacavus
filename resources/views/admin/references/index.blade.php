@@ -68,7 +68,7 @@
                 <tbody>
                     @forelse($references as $reference)
                     <tr>
-                        <td class="text-muted small">{{ $reference->order }}</td>
+                        <td class="text-muted small">{{ $references->firstItem() + $loop->index }}</td>
                         <td style="max-width:420px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
                             <strong>{{ $reference->name }}</strong>
                         </td>
