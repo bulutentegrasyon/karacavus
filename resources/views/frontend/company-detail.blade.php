@@ -33,8 +33,8 @@
                     <div style="display:flex; align-items:center; gap:16px; margin-bottom:30px;">
                         <span style="font-size:64px; font-weight:700; color:#f0e8d4; line-height:1; font-family:'Rajdhani',sans-serif;">{{ $company['number'] }}</span>
                         <div style="width:1px; height:50px; background:#e0e0e0;"></div>
-                        <div style="width:56px; height:56px; background:#1a1a1a; border-radius:2px; display:flex; align-items:center; justify-content:center;">
-                            <i class="{{ $company['icon'] }}" style="font-size:24px; color:#1B3A6B;"></i>
+                        <div style="width:56px; height:56px; background:#1B3A6B; border-radius:2px; display:flex; align-items:center; justify-content:center;">
+                            <i class="{{ $company['icon'] }}" style="font-size:24px; color:#fff;"></i>
                         </div>
                     </div>
 
@@ -452,8 +452,8 @@
                 @foreach($others as $other)
                 <div class="col-lg-3 col-md-6 space__bottom--30">
                     <a href="{{ route('company.show', $other->slug) }}" style="display:block; text-decoration:none; background:#fff; border:1px solid #e5e5e5; padding:30px 24px; border-radius:2px; transition:box-shadow .25s;" class="other-company-card">
-                        <div style="width:48px; height:48px; background:#1a1a1a; border-radius:2px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-                            <i class="{{ $other->icon }}" style="font-size:22px; color:#1B3A6B;"></i>
+                        <div style="width:48px; height:48px; background:#1B3A6B; border-radius:2px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+                            <i class="{{ $other->icon }}" style="font-size:22px; color:#fff;"></i>
                         </div>
                         <span style="display:block; font-size:10px; text-transform:uppercase; letter-spacing:2px; color:#1B3A6B; margin-bottom:8px; font-family:'Rajdhani',sans-serif;">{{ $other->sector }}</span>
                         <h5 style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 12px; line-height:1.4; font-family:'Rajdhani',sans-serif; text-transform:uppercase;">{{ $other->short }}</h5>
