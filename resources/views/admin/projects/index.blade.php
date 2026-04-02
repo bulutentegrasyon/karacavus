@@ -71,7 +71,7 @@
             </table>
         </div>
         @if($projects->hasPages())
-            <div class="card-footer">{{ $projects->links() }}</div>
+            <div class="card-footer">{{ $projects->links('pagination::bootstrap-4') }}</div>
         @endif
     </div>
 @stop

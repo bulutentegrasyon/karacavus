@@ -72,7 +72,7 @@
             </table>
         </div>
         @if($testimonials->hasPages())
-            <div class="card-footer">{{ $testimonials->links() }}</div>
+            <div class="card-footer">{{ $testimonials->links('pagination::bootstrap-4') }}</div>
         @endif
     </div>
 @stop

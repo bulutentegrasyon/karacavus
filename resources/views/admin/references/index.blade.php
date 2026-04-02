@@ -116,7 +116,7 @@
             </table>
         </div>
         @if($references->hasPages())
-            <div class="card-footer">{{ $references->links() }}</div>
+            <div class="card-footer">{{ $references->links('pagination::bootstrap-4') }}</div>
         @endif
     </div>
 @stop
