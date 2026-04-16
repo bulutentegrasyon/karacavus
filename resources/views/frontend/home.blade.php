@@ -2,6 +2,19 @@
 
 @section('title', 'Karaçavuş Şirketler Grubu | Hafriyat, İnşaat ve Proje Geliştirme')
 
+@section('css')
+<style>
+/* Team section overflow fix — slider column was position:absolute on ≥1500px with no parent min-height */
+.team-slider-column-wrapper {
+    position: static !important;
+    max-width: 100% !important;
+}
+.team-area .row {
+    align-items: flex-start;
+}
+</style>
+@stop
+
 @section('content')
     <!--====================  hero slider area ====================-->
     <div class="hero-slider-area space__bottom--r120">

@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/light-gallery.min.css') }}">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    @yield('css')
 </head>
 <body>
     <!--====================  header area ====================-->
