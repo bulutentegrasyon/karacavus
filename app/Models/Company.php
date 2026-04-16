@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model
 {
     protected $fillable = [
-        'slug', 'name', 'short', 'number', 'icon', 'tagline', 'sector',
+        'slug', 'name', 'short', 'number', 'icon', 'logo', 'tagline', 'sector',
         'established', 'about', 'activities', 'address', 'map_query',
         'phone', 'vision', 'order', 'is_active',
     ];

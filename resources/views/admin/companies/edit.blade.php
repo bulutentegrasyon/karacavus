@@ -12,7 +12,7 @@
 @stop
 
 @section('content')
-<form method="POST" action="{{ route('admin.companies.update', $company) }}">
+<form method="POST" action="{{ route('admin.companies.update', $company) }}" enctype="multipart/form-data">
     @csrf @method('PUT')
 
     <div class="row">
@@ -81,6 +81,45 @@
 
         {{-- Sağ kolon --}}
         <div class="col-lg-4">
+            {{-- Logo --}}
+            <div class="card">
+                <div class="card-header"><h3 class="card-title">Şirket Logosu</h3></div>
+                <div class="card-body">
+
+                    @if($company->logo)
+                    <div class="mb-3 p-2 border rounded text-center" style="background:#f8f8f8;">
+                        <img src="{{ asset('storage/'.$company->logo) }}"
+                             alt="{{ $company->short }} logo"
+                             style="max-height:80px;max-width:100%;object-fit:contain;">
+                    </div>
+                    <div class="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" class="custom-control-input" id="remove_logo" name="remove_logo" value="1">
+                        <label class="custom-control-label text-danger" for="remove_logo">Mevcut logoyu kaldır</label>
+                    </div>
+                    @endif
+
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="logo" name="logo"
+                               accept="image/png,image/jpeg,image/svg+xml,image/webp">
+                        <label class="custom-file-label" for="logo">
+                            {{ $company->logo ? 'Yeni logo seçin...' : 'Logo seçin...' }}
+                        </label>
+                    </div>
+                    <div id="logo-preview" class="mt-2 d-none text-center p-2 border rounded" style="background:#f8f8f8;">
+                        <img src="" alt="" style="max-height:80px;max-width:100%;object-fit:contain;">
+                    </div>
+
+                    <div class="mt-2">
+                        <small class="text-muted">
+                            <i class="fas fa-info-circle mr-1"></i>
+                            <strong>Önerilen boyut: 400 × 200 px</strong> (2:1 oran)<br>
+                            Format: PNG (şeffaf arka plan) veya SVG · Maks. 2 MB<br>
+                            Beyaz/şeffaf arka planlı logo tercih edilmeli.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
             <div class="card">
                 <div class="card-header"><h3 class="card-title">Ayarlar</h3></div>
                 <div class="card-body">
@@ -134,4 +173,21 @@
 
     </div>
 </form>
+@stop
+
+@section('js')
+<script>
+document.getElementById('logo').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    document.querySelector('label[for="logo"]').textContent = file.name;
+    const reader = new FileReader();
+    reader.onload = ev => {
+        const p = document.getElementById('logo-preview');
+        p.querySelector('img').src = ev.target.result;
+        p.classList.remove('d-none');
+    };
+    reader.readAsDataURL(file);
+});
+</script>
 @stop
