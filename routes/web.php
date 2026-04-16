@@ -17,8 +17,7 @@ Route::get('/', function () {
     $services         = Service::active()->take(9)->get();
     $latestPosts      = Post::active()->with('category')->latest('published_at')->take(3)->get();
     $testimonials     = Testimonial::active()->orderBy('order')->get();
-    $featuredProjects = Project::active()->featured()->take(12)->get();
-    return view('frontend.home', compact('services', 'latestPosts', 'testimonials', 'featuredProjects'));
+    return view('frontend.home', compact('services', 'latestPosts', 'testimonials'));
 });
 Route::get('/hakkimizda', fn() => view('frontend.about'));
 Route::get('/hizmetler', function () {
@@ -34,16 +33,17 @@ Route::get('/referanslar/{slug}', function ($slug) {
     $others    = Reference::active()->where('id', '!=', $reference->id)->inRandomOrder()->take(8)->get();
     return view('frontend.reference-detail', compact('reference', 'others'));
 });
-Route::get('/projeler', function () {
-    $projects   = Project::active()->get();
-    $categories = $projects->pluck('category')->unique()->filter()->values();
-    return view('frontend.projects', compact('projects', 'categories'));
-});
-Route::get('/projeler/{slug}', function (string $slug) {
-    $project = Project::active()->where('slug', $slug)->firstOrFail();
-    $others  = Project::active()->where('slug', '!=', $slug)->inRandomOrder()->take(8)->get();
-    return view('frontend.project-detail', compact('project', 'others'));
-})->name('project.show');
+// TODO: Projeler sayfası ileride aktif edilecek
+// Route::get('/projeler', function () {
+//     $projects   = Project::active()->get();
+//     $categories = $projects->pluck('category')->unique()->filter()->values();
+//     return view('frontend.projects', compact('projects', 'categories'));
+// });
+// Route::get('/projeler/{slug}', function (string $slug) {
+//     $project = Project::active()->where('slug', $slug)->firstOrFail();
+//     $others  = Project::active()->where('slug', '!=', $slug)->inRandomOrder()->take(8)->get();
+//     return view('frontend.project-detail', compact('project', 'others'));
+// })->name('project.show');
 Route::get('/iletisim', fn() => view('frontend.contact'));
 Route::get('/blog', function () {
     $posts       = Post::active()->with('category')->latest('published_at')->paginate(6);

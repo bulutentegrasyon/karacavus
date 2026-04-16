@@ -56,7 +56,7 @@
                                                 <ul class="d-flex justify-content-end">
                                                     <li><a href="/hakkimizda">Hakkımızda</a></li>
                                                     <li><a href="/hizmetler">Hizmetler</a></li>
-                                                    <li><a href="/projeler">Projeler</a></li>
+                                                    {{-- <li><a href="/projeler">Projeler</a></li> --}}
                                                     {{-- <li><a href="/referanslar">Referanslar</a></li> --}}
                                                     <li><a href="/sirketlerimiz">Şirketlerimiz</a></li>
                                                     <li><a href="/blog">Blog</a></li>
@@ -121,7 +121,7 @@
                     <ul>
                         <li><a href="/hakkimizda">Hakkımızda</a></li>
                         <li><a href="/hizmetler">Hizmetler</a></li>
-                        <li><a href="/projeler">Projeler</a></li>
+                        {{-- <li><a href="/projeler">Projeler</a></li> --}}
                         {{-- <li><a href="/referanslar">Referanslar</a></li> --}}
                         <li><a href="/sirketlerimiz">Şirketlerimiz</a></li>
                         <li><a href="/blog">Blog</a></li>
@@ -205,7 +205,7 @@
                         <ul class="footer-widget__menu">
                             <li><a href="/hakkimizda">Hakkımızda</a></li>
                             <li><a href="/hizmetler">Hizmetlerimiz</a></li>
-                            <li><a href="/projeler">Projelerimiz</a></li>
+                            {{-- <li><a href="/projeler">Projelerimiz</a></li> --}}
                             {{-- <li><a href="/referanslar">Referanslar</a></li> --}}
                             <li><a href="/sirketlerimiz">Şirketlerimiz</a></li>
                             <li><a href="/blog">Blog</a></li>
