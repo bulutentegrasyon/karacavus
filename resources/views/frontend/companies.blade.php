@@ -54,7 +54,7 @@
                     <!-- Icon -->
                     <div class="col-auto d-none d-lg-flex align-items-center" style="padding-right:30px;">
                         <div style="width:64px; height:64px; background:#1B3A6B; border-radius:2px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                            <i class="{{ $c->icon }}" style="font-size:28px; color:#1B3A6B;"></i>
+                            <i class="{{ $c->icon }}" style="font-size:28px; color:#fff;"></i>
                         </div>
                     </div>
                     <!-- Text -->
