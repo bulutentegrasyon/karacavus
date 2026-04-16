@@ -4,13 +4,39 @@
 
 @section('css')
 <style>
-/* Team section overflow fix — slider column was position:absolute on ≥1500px with no parent min-height */
+/* Team section — 3 eşit blok, hizalı */
 .team-slider-column-wrapper {
     position: static !important;
     max-width: 100% !important;
 }
 .team-area .row {
-    align-items: flex-start;
+    align-items: stretch;
+}
+.team-area .col-lg-4 {
+    display: flex;
+    align-items: center;
+}
+/* Slider yerine 3 eşit grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: stretch;
+}
+.team-grid-item {
+    overflow: hidden;
+    border-radius: 2px;
+}
+.team-grid-item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+@media (max-width: 767px) {
+    .team-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .team-grid-item img { height: 160px; }
 }
 </style>
 @stop
@@ -288,32 +314,15 @@
                     </div>
                 </div>
                 <div class="col-lg-8 team-slider-column-wrapper">
-                    <!-- team member slider -->
-                    <div class="team-slider-wrapper slick-slider-x-gap-30">
-                        <div class="single-team-member text-center">
-                            <div class="single-team-member__image space__bottom--10">
-                                <img width="510" height="776" src="{{ asset('assets/img/team/team-member1.webp') }}" alt="">
-                            </div>
+                    <div class="team-grid">
+                        <div class="team-grid-item">
+                            <img src="{{ asset('assets/img/team/team-member1.webp') }}" alt="">
                         </div>
-                        <div class="single-team-member text-center">
-                            <div class="single-team-member__image space__bottom--10">
-                                <img width="510" height="775" src="{{ asset('assets/img/team/team-member2.webp') }}" alt="">
-                            </div>
+                        <div class="team-grid-item">
+                            <img src="{{ asset('assets/img/team/team-member2.webp') }}" alt="">
                         </div>
-                        <div class="single-team-member text-center">
-                            <div class="single-team-member__image space__bottom--10">
-                                <img width="510" height="775" src="{{ asset('assets/img/team/team-member3.webp') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="single-team-member text-center">
-                            <div class="single-team-member__image space__bottom--10">
-                                <img width="510" height="775" src="{{ asset('assets/img/team/team-member4.webp') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="single-team-member text-center">
-                            <div class="single-team-member__image space__bottom--10">
-                                <img width="510" height="776" src="{{ asset('assets/img/team/team-member5.webp') }}" alt="">
-                            </div>
+                        <div class="team-grid-item">
+                            <img src="{{ asset('assets/img/team/team-member3.webp') }}" alt="">
                         </div>
                     </div>
                 </div>
