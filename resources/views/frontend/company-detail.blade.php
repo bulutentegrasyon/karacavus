@@ -133,6 +133,122 @@
     </div>
     <!--====================  End of Company intro  ====================-->
 
+    <!--====================  Vehicles (Ömkar only) ====================-->
+    @if(!empty($showVehicles) && $vehicles->count() > 0)
+    @php
+        $vehicleCategories = [
+            'arazi_suv' => ['label' => 'Arazi & SUV',         'icon' => 'fa-road'],
+            'otomobil'  => ['label' => 'Otomobil',             'icon' => 'fa-car'],
+            'minivan'   => ['label' => 'Minivan & Panelvan',   'icon' => 'fa-bus'],
+            'ticari'    => ['label' => 'Ticari Araçlar',       'icon' => 'fa-truck'],
+        ];
+    @endphp
+    <style>
+    .veh-section { padding: 80px 0; background: #f8f7f4; }
+    .veh-cat-title {
+        font-size: 13px; text-transform: uppercase; letter-spacing: 3px; color: #999;
+        font-family: 'Rajdhani', sans-serif; margin-bottom: 8px;
+    }
+    .veh-cat-bar { width: 48px; height: 3px; background: #1B3A6B; margin-bottom: 28px; }
+    .veh-card {
+        background: #fff; border: 1px solid #ececec; border-radius: 2px;
+        padding: 22px 20px 18px; display: flex; flex-direction: column;
+        text-decoration: none; color: inherit; transition: box-shadow .2s, border-color .2s;
+        height: 100%;
+    }
+    .veh-card:hover { box-shadow: 0 6px 24px rgba(27,58,107,.1); border-color: #1B3A6B; color: inherit; }
+    .veh-card-thumb {
+        width: 100%; aspect-ratio: 16/9; border-radius: 2px; overflow: hidden;
+        margin-bottom: 14px; background: #1B3A6B; position: relative;
+    }
+    .veh-card-thumb img {
+        width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .veh-card-thumb-placeholder {
+        width: 100%; height: 100%; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; gap: 6px;
+    }
+    .veh-card-name {
+        font-size: 13px; font-weight: 700; color: #1a1a1a; font-family: 'Rajdhani', sans-serif;
+        text-transform: uppercase; line-height: 1.35; flex: 1; margin-bottom: 14px;
+    }
+    .veh-card-meta {
+        display: flex; align-items: center; justify-content: space-between;
+        border-top: 1px solid #f0f0f0; padding-top: 12px; margin-top: auto;
+    }
+    .veh-card-year {
+        font-size: 11px; font-family: 'Rajdhani', sans-serif; font-weight: 700;
+        color: #1B3A6B; letter-spacing: 1px;
+    }
+    .veh-card-link {
+        font-size: 10px; font-family: 'Rajdhani', sans-serif; font-weight: 700;
+        color: #1B3A6B; text-transform: uppercase; letter-spacing: 1.5px;
+    }
+    .veh-cat-section { margin-bottom: 56px; }
+    .veh-cat-section:last-child { margin-bottom: 0; }
+    </style>
+
+    <div class="veh-section">
+        <div class="container">
+            <span style="font-size:11px;text-transform:uppercase;letter-spacing:3px;color:#1B3A6B;font-family:'Rajdhani',sans-serif;">Satılık Araçlar</span>
+            <div style="width:48px;height:3px;background:#1B3A6B;margin:10px 0 48px;"></div>
+
+            @foreach($vehicleCategories as $catKey => $catInfo)
+            @php $catVehicles = $vehicles->where('category', $catKey); @endphp
+            @if($catVehicles->count() > 0)
+            <div class="veh-cat-section">
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+                    <div style="width:36px;height:36px;background:#1B3A6B;border-radius:2px;display:flex;align-items:center;justify-content:center;">
+                        <i class="fa {{ $catInfo['icon'] }}" style="font-size:15px;color:#fff;"></i>
+                    </div>
+                    <div>
+                        <div class="veh-cat-title" style="margin-bottom:0;">{{ $catInfo['label'] }}</div>
+                        <div class="veh-cat-bar" style="margin:6px 0 0;"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach($catVehicles as $vehicle)
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <a href="{{ route('vehicle.show', $vehicle->slug) }}" class="veh-card">
+                            <div class="veh-card-thumb">
+                                @if($vehicle->cover_image)
+                                    @php $coverSrc = str_starts_with($vehicle->cover_image, 'http') ? $vehicle->cover_image : asset('storage/'.$vehicle->cover_image); @endphp
+                                    <img src="{{ $coverSrc }}" alt="{{ $vehicle->name }}" loading="lazy">
+                                @else
+                                    <div class="veh-card-thumb-placeholder">
+                                        <i class="fa {{ $catInfo['icon'] }}" style="font-size:28px;color:rgba(255,255,255,.4);"></i>
+                                        <span style="font-size:11px;font-family:'Rajdhani',sans-serif;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:2px;">{{ strtoupper($vehicle->brand ?? '') }}</span>
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="veh-card-name">{{ $vehicle->name }}</div>
+                            <div class="veh-card-meta">
+                                <span class="veh-card-year">{{ $vehicle->year ?? '—' }}</span>
+                                <span class="veh-card-link">İncele →</span>
+                            </div>
+                            @if($vehicle->price || $vehicle->km)
+                            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px dashed #eee;">
+                                @if($vehicle->price)
+                                <span style="font-size:13px;font-weight:700;color:#1B3A6B;font-family:'Rajdhani',sans-serif;">{{ $vehicle->price }}</span>
+                                @endif
+                                @if($vehicle->km)
+                                <span style="font-size:11px;color:#aaa;font-family:'Rajdhani',sans-serif;">{{ number_format($vehicle->km) }} km</span>
+                                @endif
+                            </div>
+                            @endif
+                        </a>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            @endif
+            @endforeach
+
+        </div>
+    </div>
+    @endif
+    <!--====================  End Vehicles  ====================-->
+
     <!--====================  References ====================-->
     @if($references->count() > 0)
     @php

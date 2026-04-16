@@ -344,6 +344,16 @@ return [
             ],
         ],
         [
+            'text'   => 'Araçlar (Ömkar)',
+            'url'    => 'admin/vehicles',
+            'icon'   => 'fas fa-fw fa-truck',
+            'active' => ['admin/vehicles*'],
+            'submenu' => [
+                ['text' => 'Tüm Araçlar', 'url' => 'admin/vehicles',        'icon' => 'fas fa-fw fa-list'],
+                ['text' => 'Yeni Araç',   'url' => 'admin/vehicles/create', 'icon' => 'fas fa-fw fa-plus'],
+            ],
+        ],
+        [
             'text'   => 'Referanslar',
             'url'    => 'admin/references',
             'icon'   => 'fas fa-fw fa-hard-hat',

@@ -9,6 +9,7 @@ use App\Models\Service;
 use App\Models\BlogCategory;
 use App\Models\Company;
 use App\Models\Testimonial;
+use App\Models\Vehicle;
 use Illuminate\Support\Facades\Route;
 
 // ─── Ön Yüz ─────────────────────────────────────────────────────────────────
@@ -74,9 +75,16 @@ Route::get('/hizmetler/{slug}', function (string $slug) {
 Route::get('/sirketlerimiz/{slug}', function (string $slug) {
     $company    = Company::active()->where('slug', $slug)->firstOrFail();
     $references = Reference::active()->where('company', $company->short)->orderBy('order')->get();
+    $vehicles   = Vehicle::active()->where('company', 'Ömkar Otomotiv')->orderBy('order')->get();
     $others     = Company::active()->where('slug', '!=', $slug)->orderBy('order')->get();
-    return view('frontend.company-detail', compact('company', 'references', 'others'));
+    $showVehicles = $slug === 'omkar-insaat-hafriyat';
+    return view('frontend.company-detail', compact('company', 'references', 'vehicles', 'others', 'showVehicles'));
 })->name('company.show');
+
+Route::get('/omkar/araclar/{slug}', function (string $slug) {
+    $vehicle = Vehicle::active()->where('slug', $slug)->firstOrFail();
+    return view('frontend.vehicle-detail', compact('vehicle'));
+})->name('vehicle.show');
 
 // ─── Admin Panel ─────────────────────────────────────────────────────────────
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
@@ -101,6 +109,14 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 
     // Şirketler
     Route::resource('companies', Admin\CompanyController::class)->only(['index', 'edit', 'update']);
+
+    // Araçlar (Ömkar)
+    Route::resource('vehicles', Admin\VehicleController::class)->except('show');
+    Route::post('vehicles/sahibinden/fetch-image',    [Admin\SahibindenProxyController::class, 'fetchImage'])->name('vehicles.sahibinden.fetch-image');
+    Route::post('vehicles/sahibinden/check-status',   [Admin\SahibindenProxyController::class, 'checkStatus'])->name('vehicles.sahibinden.check-status');
+    Route::post('vehicles/sahibinden/sync-all',       [Admin\SahibindenProxyController::class, 'syncAll'])->name('vehicles.sahibinden.sync-all');
+    Route::match(['post','options'], 'vehicles/sahibinden/receive-image', [Admin\SahibindenProxyController::class, 'receiveImage'])->name('vehicles.sahibinden.receive-image');
+    Route::get('vehicles/sahibinden/pending-image',   [Admin\SahibindenProxyController::class, 'pendingImage'])->name('vehicles.sahibinden.pending-image');
 
     // Ayarlar
     Route::get('settings', [Admin\SettingController::class, 'index'])->name('settings.index');

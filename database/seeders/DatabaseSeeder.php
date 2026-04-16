@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             ReferenceSeeder::class,
             SiteSettingSeeder::class,
             ContentSeeder::class,
+            VehicleSeeder::class,
         ]);
     }
 }
