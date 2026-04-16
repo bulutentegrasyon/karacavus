@@ -38,6 +38,16 @@
     .team-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
     .team-grid-item img { height: 160px; }
 }
+/* Service area — banner görseli taşmasın */
+.service-area {
+    overflow: hidden;
+    padding-top: 60px;
+}
+.service-banner > img {
+    max-height: 420px;
+    width: auto;
+    object-fit: contain;
+}
 </style>
 @stop
 
