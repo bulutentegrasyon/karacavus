@@ -208,23 +208,6 @@
     </div>
 </form>
 
-{{-- Sil formu --}}
-<div class="row mt-2">
-    <div class="col-lg-4 offset-lg-8">
-        <div class="card card-danger card-outline">
-            <div class="card-header"><h3 class="card-title text-danger"><i class="fas fa-trash mr-1"></i> Tehlikeli Alan</h3></div>
-            <div class="card-body">
-                <form method="POST" action="{{ route('admin.vehicles.destroy', $vehicle) }}"
-                      onsubmit="return confirm('Bu aracı kalıcı olarak silmek istediğinize emin misiniz?')">
-                    @csrf @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-block">
-                        <i class="fas fa-trash mr-1"></i> Aracı Sil
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 @stop
 
 @section('js')
