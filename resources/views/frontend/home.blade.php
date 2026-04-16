@@ -41,12 +41,16 @@
 /* Service area — banner görseli taşmasın */
 .service-area {
     overflow: hidden;
-    padding-top: 60px;
+}
+.service-banner {
+    line-height: 0;
 }
 .service-banner > img {
-    max-height: 420px;
-    width: auto;
-    object-fit: contain;
+    width: 100%;
+    max-height: 340px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
 }
 </style>
 @stop
@@ -204,7 +208,7 @@
     <!--====================  service area ====================-->
     <div class="service-area">
         <div class="container">
-            <div class="row align-items-end">
+            <div class="row align-items-center">
                 <div class="col-xl-3 col-lg-4 d-none d-lg-block">
                     <!-- service banner -->
                     <div class="service-banner">

@@ -46,7 +46,7 @@
     <!--====================  End of about area  ====================-->
 
     <!--====================  sektörler area ====================-->
-    <div class="feature-area space__bottom--r120" style="background:#f9f9f9; padding:80px 0;">
+    <div class="feature-area space__bottom--r120" style="background:#f9f9f9; padding:80px 0; color:#1a1a1a;">
         <div class="container">
             <div class="section-title text-center space__bottom--40 mx-auto">
                 <h3 class="section-title__sub">Faaliyet Alanlarımız</h3>
@@ -91,11 +91,11 @@
                 <div class="col-lg-6 mb-4">
                     <h3 style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:26px;border-bottom:2px solid #1B3A6B;padding-bottom:10px;margin-bottom:20px;">Değerlerimiz</h3>
                     <ul style="list-style:none;padding:0;color:#555;line-height:2.2;">
-                        <li><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i> Güven ve şeffaflık</li>
-                        <li><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i> Kalite ve süreklilik</li>
-                        <li><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i> Sorumluluk bilinci</li>
-                        <li><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i> Yenilikçi yaklaşım</li>
-                        <li><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i> Uzun vadeli iş ortaklıkları</li>
+                        <li style="color:#555;"><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i>Güven ve şeffaflık</li>
+                        <li style="color:#555;"><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i>Kalite ve süreklilik</li>
+                        <li style="color:#555;"><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i>Sorumluluk bilinci</li>
+                        <li style="color:#555;"><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i>Yenilikçi yaklaşım</li>
+                        <li style="color:#555;"><i class="fa fa-check" style="color:#1B3A6B;margin-right:8px;"></i>Uzun vadeli iş ortaklıkları</li>
                     </ul>
                 </div>
             </div>
@@ -109,10 +109,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 mx-auto">
-                        <div class="cta-block cta-block--default-color">
-                            <p class="cta-block__light-text text-center">Projenizi Birlikte Hayata Geçirelim</p>
-                            <p class="cta-block__semi-bold-text cta-block__semi-bold-text--medium text-center">İhtiyacınıza özel çözümler için uzman ekibimizle hemen iletişime geçin.</p>
-                            <p class="cta-block__bold-text text-center">Teklif Alın</p>
+                        <div class="cta-block">
+                            <p class="cta-block__light-text text-center" style="color:#fff;">Projenizi Birlikte Hayata Geçirelim</p>
+                            <p class="cta-block__semi-bold-text cta-block__semi-bold-text--medium text-center" style="color:#fff;">İhtiyacınıza özel çözümler için uzman ekibimizle hemen iletişime geçin.</p>
+                            <p class="cta-block__bold-text text-center" style="color:#fff;">Teklif Alın</p>
                         </div>
                     </div>
                 </div>
