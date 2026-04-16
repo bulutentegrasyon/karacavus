@@ -49,7 +49,7 @@
                 <div class="row align-items-center" style="padding:48px 0; transition:background .25s;">
                     <!-- Number -->
                     <div class="col-lg-1 col-2 d-none d-md-flex align-items-center">
-                        <span style="font-size:48px; font-weight:700; color:#e8e0d0; font-family:'Rajdhani',sans-serif; line-height:1; display:block;">{{ $c->number }}</span>
+                        <span style="font-size:48px; font-weight:700; color:#c8d3e4; font-family:'Rajdhani',sans-serif; line-height:1; display:block;">{{ $c->number }}</span>
                     </div>
                     <!-- Icon -->
                     <div class="col-auto d-none d-lg-flex align-items-center" style="padding-right:30px;">
