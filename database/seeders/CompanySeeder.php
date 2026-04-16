@@ -59,7 +59,7 @@ class CompanySeeder extends Seeder
                 'order'       => 2,
             ],
             [
-                'slug'        => 'omkar-insaat-hafriyat',
+                'slug'        => 'omkar-otomotiv-insaat',
                 'name'        => 'Ömkar Otomotiv İnşaat Sanayi ve Tic. Ltd. Şti.',
                 'short'       => 'Ömkar Otomotiv',
                 'number'      => '03',

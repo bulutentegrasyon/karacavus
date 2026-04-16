@@ -77,7 +77,7 @@ Route::get('/sirketlerimiz/{slug}', function (string $slug) {
     $references = Reference::active()->where('company', $company->short)->orderBy('order')->get();
     $vehicles   = Vehicle::active()->where('company', 'Ömkar Otomotiv')->orderBy('order')->get();
     $others     = Company::active()->where('slug', '!=', $slug)->orderBy('order')->get();
-    $showVehicles = $slug === 'omkar-insaat-hafriyat';
+    $showVehicles = $slug === 'omkar-otomotiv-insaat';
     return view('frontend.company-detail', compact('company', 'references', 'vehicles', 'others', 'showVehicles'));
 })->name('company.show');
 

@@ -62,7 +62,7 @@
                     <ul class="page-breadcrumb-links">
                         <li><a href="/">Ana Sayfa</a></li>
                         <li><a href="{{ route('companies') }}">Şirketlerimiz</a></li>
-                        <li><a href="{{ route('company.show', 'omkar-insaat-hafriyat') }}">Ömkar Otomotiv</a></li>
+                        <li><a href="{{ route('company.show', 'omkar-otomotiv-insaat') }}">Ömkar Otomotiv</a></li>
                         <li>{{ $vehicle->name }}</li>
                     </ul>
                 </div>
@@ -74,7 +74,7 @@
 <div class="space__top--r120 space__bottom--r120">
     <div class="container">
 
-        <a href="{{ route('company.show', 'omkar-insaat-hafriyat') }}" class="vd-back">
+        <a href="{{ route('company.show', 'omkar-otomotiv-insaat') }}" class="vd-back">
             <i class="fa fa-arrow-left" style="font-size:10px;"></i> Ömkar Otomotiv'e Dön
         </a>
 
@@ -160,7 +160,7 @@
                     <p style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:24px;font-family:'Rajdhani',sans-serif;">
                         Otomotiv, kamuflaj ve lojistik sektörlerinde hizmet veren Ömkar Otomotiv'in araç satış portföyü.
                     </p>
-                    <a href="{{ route('company.show', 'omkar-insaat-hafriyat') }}" style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;font-family:'Rajdhani',sans-serif;">
+                    <a href="{{ route('company.show', 'omkar-otomotiv-insaat') }}" style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;font-family:'Rajdhani',sans-serif;">
                         Tüm Araçlar <i class="fa fa-arrow-right" style="font-size:10px;"></i>
                     </a>
                 </div>
