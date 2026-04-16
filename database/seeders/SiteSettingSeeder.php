@@ -15,9 +15,9 @@ class SiteSettingSeeder extends Seeder
             ['key' => 'site_tagline', 'value' => 'Hafriyat ve Proje Geliştirmede Güvenilir Çözüm Ortağı', 'group' => 'general'],
 
             // İletişim
-            ['key' => 'site_phone',   'value' => '+90 312 000 00 00', 'group' => 'contact'],
+            ['key' => 'site_phone',   'value' => '0539 730 50 65', 'group' => 'contact'],
             ['key' => 'site_email',   'value' => 'info@karacavus.com.tr', 'group' => 'contact'],
-            ['key' => 'site_address', 'value' => 'Bağlarbaşı Mah. Sülün Cad. Gürel Apartmanı No:15 İç Kapı No:1 Maltepe / İstanbul', 'group' => 'contact'],
+            ['key' => 'site_address', 'value' => 'Soğanlık Yeni Mah. Pega Gaz Sk. Aura Residence No:4/A K.6 D.48 Kartal / İstanbul', 'group' => 'contact'],
 
             // SEO
             ['key' => 'meta_description', 'value' => 'Karaçavuş Proje Geliştirme İnşaat Ltd Şti — hafriyat, toprak işleri, yıkım ve altyapı projelerinde güvenilir çözüm ortağınız.', 'group' => 'seo'],
